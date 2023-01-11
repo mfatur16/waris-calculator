@@ -1,0 +1,530 @@
+/* 
+Nama    : Muhammad Faturrahman Saputra
+NIM     : 201552020041
+Prodi   : Teknik Informatika
+*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body, a {
+    font-family: "Raleway", Arial, sans-serif;
+    text-decoration: none;
+}
+
+
+
+/* Header */
+header {
+    height: 60px;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    background-color: rgb(34, 49, 52, 0.95);
+    z-index: 10;
+}
+
+
+
+/* Header - Logo */
+.logo {
+    height: 60px;
+    width: 300px;
+    padding: 0px 0px 0px 139px;
+    float: left;
+    text-align: center;
+}
+
+.logo a {
+    line-height: 60px;
+    font-size: 35px;
+    font-weight: bold;
+    color: #ededed;
+    transition: all 0.3s;
+    letter-spacing: 3px;
+}
+
+.logo a:hover {
+    color: #fff;
+}
+
+
+
+/* Header - Nav */
+nav {
+    margin: 0px 200px 0px 0px;
+    float: right;
+}
+
+nav ul {
+    margin: 0px;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a {
+    padding: 0px 10px;
+    width: 70px;
+    line-height: 60px;
+    float: left;
+    text-align: center;
+    font-size: 17px;
+    color: #ededed;
+    transition: all 0.3s;
+}
+
+nav a:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+
+/* Main */
+main {
+    margin: 0 auto;
+}
+
+
+
+/* Main - Container */
+.container {
+    margin: 0px auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;
+}
+
+
+
+/* Main - Container Card */
+.container.card {
+    margin-top: 95px;
+    max-width: 1155px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+
+
+/* Main - Card Content */
+.card-content {
+    position: relative;
+    margin: 0px 14.5px 30px;
+    width: 30.82%;
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.card-content img {
+    display: block;
+    width: 100%;
+}
+
+.overlay {
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    transition: 0.3s all ease;
+    opacity: 1;
+}
+
+.card-content:hover .overlay {
+    opacity: 0;
+}
+
+
+/* Main - Form Content & Edit Content */
+.form-content, .edit-content {
+    margin: 110px 0px 30px;
+    padding: 0px 40px;
+    width: 1126px;
+    box-sizing: border-box;
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.title {
+    margin-top: 30px;
+    font-size: 20px;
+    border-bottom: 4px solid #c1c1c1;
+}
+
+.title h3 {
+    margin-bottom: 0px;
+    font-size: 28px;
+}
+
+.form {
+    margin-top: -15px;
+    padding: 0px 20px;
+}
+
+label {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+label.normal {
+    margin-left: 2px;
+    font-weight: unset;
+}
+
+label.normal.jumlah {
+    width: 200px;
+}
+
+.form-label {
+    margin: 15px 0px 0px;
+}
+
+.form-label.ket {
+    margin: 0px 0px 5px;
+    font-size: 15px;
+    font-style: italic;
+    color: #979797;
+}
+
+.input-control {
+    width: 100%;
+    height: 30px;
+    padding: 0 5px 0;
+    margin: 0 0 1px;
+    box-sizing: border-box;
+}
+
+.input-control.jumlah {
+    width: 80%;
+}
+
+.input-control.jumlah.top {
+    margin-bottom: 5px;
+}
+
+.input-radio {
+    margin: -3px 5px 0px -5px;
+}
+
+.input-radio.bottom {
+    margin: 2px 5px 0px -5px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    appearance: textfield;
+}
+
+textarea {
+    resize: none;
+    min-height: 150px;
+}
+
+.input-control.poster {
+    padding: 0px;
+    margin-bottom: -8px;
+}
+
+.input-control.deskripsi {
+    padding-top: 5px;
+}
+
+.btn {
+    width: 77px;
+    margin: 15px 0px 30px;
+    padding: 8px 15px;
+    display: inline-block;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #ededed;
+    opacity: 0.7;
+}
+
+.btn:hover {
+    color: #fff;
+    opacity: 1;
+}
+
+.btn.reset, .btn.cancel {
+    margin-right: 13px;
+    margin-left: 874px;
+    background-color: #c80000;
+}
+
+.btn.submit {
+    background-color: #00c800;
+}
+
+.form-control img {
+    margin-bottom: 5px;
+    height: 0 auto;
+    width: 200px;
+    display: block;
+    border-radius: 5px;
+}
+
+
+
+/* Main - Table Content */
+.table-content {
+    margin-bottom: 30px;
+    padding: 0px 40px;
+    height: 0 auto;
+    width: 1126px;
+    box-sizing: border-box;
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+table {
+    margin-bottom: 30px;
+    width: 1046px;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+tr {
+    background-color: #bcc0c2;
+}
+
+tr:nth-child(even) {
+    background-color: #d6d9da;
+}
+
+tr:hover {
+    background-color: #8f9395;
+    transition: all 0.3s;
+}
+
+td {
+    padding-left: 5px;
+    box-sizing: border-box;
+    border: 0.3px solid #fff;
+}
+
+td.no, td.judul, td.opsi {
+    height: 44.6px;
+    padding-left: 0px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #223134;
+}
+
+td.no {
+    width: 50px;
+}
+
+td.opsi {
+    width: 175px;
+}
+
+.td-btn {
+    padding-left: 2px;
+}
+
+.btn.edit, .btn.delete, .btn.cancel {
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn.edit {
+    margin: 4px 4px 4px 4px;
+    background-color: #0000c8;
+}
+
+.btn.delete {
+    margin: 4px 4px 4px 0px;
+    background-color: #c80000;
+}
+
+
+
+/* Main - Detail Content & About Content */
+.detail-content, .about-content {
+    margin: 95px 0px 30px;
+    padding: 0px 40px;
+    width: 1126px;
+    box-sizing: border-box;
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.detail-content a, ol {
+    padding: 0px 7px 0px 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.detail-content ol {
+    margin: 29.250px 0px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    color: #000;
+}
+
+.detail-content ol li+li::before {
+    padding-right: 7px;
+    color: #717475;
+    content: "/";
+}
+
+.detail-content a {
+    color: #717475;
+}
+
+.detail-content a:hover {
+    color: #000;
+    transition: all 0.3s;
+}
+
+.detail-content img {
+    margin: auto;
+    height: 0 auto;
+    width: 250px;
+    display: block;
+    border-radius: 5px;
+}
+
+.detail-content table {
+    margin: 30px 0px 0px;
+    width: 1046px;
+}
+
+.detail-content tr {
+    background-color: #fff;
+}
+
+.detail-content td {
+    padding-left: 0px;
+}
+
+.detail-content td.name {
+    width: 80px;
+    font-weight: bold;
+}
+
+.detail-content td.divided {
+    width: 15px;
+    font-weight: bold;
+}
+
+.detail-content p {
+    margin: 10px 0px 30px;
+}
+
+.lomo {
+    margin: 30px auto;
+    width: 260px;
+    height: 260px;
+    background-color: #223134;
+    border-radius: 100%;
+
+}
+
+.lomo p {
+    padding-top: 40%;
+    font-size: 50px;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.desc p {
+    font-size: 25px;
+    text-align: justify;
+    text-indent: 0.5in;
+}
+
+.desc span {
+    font-weight: bold;
+    color: #223134;
+    letter-spacing: 3px;
+}
+
+
+
+/* Footer - Container Footer */
+.container.footer {
+    background-color: #101516;
+}
+
+.footer h3 {
+    color: #fff;
+    padding-bottom: 5px;
+}
+
+
+
+/* Footer - Footer Content */
+.footer-content {
+    width: 1350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.sub-footer {
+    width: 20%;
+}
+
+.sub-footer.dev {
+    width: 30%;
+}
+
+.sub-footer p {
+    margin: 0px;
+    color: #fff;
+}
+
+.sub-footer a {
+    margin-bottom: 5px;
+    color: #ededed;
+    font-size: 15px;
+}
+
+.sub-footer a:hover {
+    color: #fff;
+}
+
+.footer-title {
+    margin: 20px 0px 5px;
+    border-bottom: 5px solid #ededed;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.footer-info {
+    width: 100%;
+    text-align: center;
+    margin-top: 80px;
+    padding: 20px 0px 20px;
+    border-top: thin solid #ededed;
+}
+
+.footer-info p, a {
+    font-size: 15px;
+    color: #fff;
+}
