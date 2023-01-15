@@ -3,25 +3,36 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="assets/ico/favicon.ico">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- <link rel="icon" href="assets/ico/favicon.ico"> -->
         <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/input.css">
         <title>Beranda | WARIS</title>
     </head>
     <body>
-        <header>
-            <div class="logo">
-                <a href="index.html">WARIS</a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Beranda</a></li>
-                    <li><a href="hitung.html">Hitung</a></li>
-                    <li><a href="dalil.html">Dalil</a></li>
-                    <li><a href="tentang.html">Tentang</a></li>
-                </ul>
+        <header class="flex justify-between text-lg font-sans font-bold bg-blue-900 text-white h-16 items-center px-6">
+                <a class="p-4 flex h-10 items-center hover:bg-blue-600" href="index.html">WARIS</a>
+            <nav class="flex justify-between w-2/6">
+                <a class="p-4 flex h-10 items-center hover:bg-blue-600" href="index.html">Beranda</a>
+                <a class="p-4 flex h-10 items-center hover:bg-blue-600" href="dalil.html">Dalil</a>
+                <a class="p-4 flex h-10 items-center hover:bg-blue-600" href="hitung.html">Hitung</a>
+                <a class="p-4 flex h-10 items-center hover:bg-blue-600" href="tentang.html">Tentang</a>
             </nav>
         </header>
         <main>
+            <section class="flex h-96 bg-cover bg-center items-center" style="background-image: url(/assets/img/treasure2.jpg);">
+                <div>
+
+                    <span class="text-white font-bold w-1/2 float-right bg-[#0007] p-6 mr-4">Harta warisan adalah harta bawaan ditambah dengan bagian dari harta bersama sesudah digunakan keperluan pewaris selama sakit sampai meninggal, pembayaran hutang, pengurusan jenazah serta wasiat pewaris.</span>
+                </div>
+            </section>
+            <section class="flex flex-col p-24">
+                    <span>Fitur - Fitur</span>
+                    <div class="flex justify-between">
+                        <div class="">Dalil</div>
+                        <div class="">Hitung</div>
+                    </div>
+            </section>
         </main>
         <footer>
             <div class="container footer">
