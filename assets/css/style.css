@@ -22,7 +22,7 @@ header {
     width: 100%;
     top: 0;
     position: fixed;
-    background-color: rgb(34, 49, 52, 0.95);
+    background-color: #223134f2;
     z-index: 10;
 }
 
@@ -79,7 +79,7 @@ nav a {
 
 nav a:hover {
     color: #fff;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: #ffffff4d;
 }
 
 
