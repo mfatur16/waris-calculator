@@ -28,7 +28,7 @@
                     <div class="title">
                         <h3>Informasi Umum Pewaris</h3>
                     </div>
-                    <form action="system/eksekusi_simpan.php" method="POST" enctype="multipart/form-data">
+                    <form method="GET" enctype="multipart/form-data">
                         <div class="form-control">
                             <label class="form-label">Jenis kelamin pewaris</label><br>
                             <label class="form-label ket">Jenis kelamin pihak yang meninggalkan harta</label>
@@ -56,17 +56,17 @@
                         <div class="form-control">
                             <label class="form-label">Perkiraan total harta yang dimiliki pewaris</label><br>
                             <label class="form-label ket">Harta yang dimiliki oleh pewaris</label>
-                            <input type="text" class="input-control" name="harta" id="harta" placeholder="Rp." maxlength="12" required>
+                            <input type="text" class="input-control" name="harta" id="harta" placeholder="Rp." oninput="this.value = this.value.replace(/[^0-9]/g, '');" maxlength="12" required>
                         </div>
                         <div class="form-control">
                             <label class="form-label">Perkiraan total hutang yang dimiliki pewaris</label><br>
                             <label class="form-label ket">Hutang yang dimiliki oleh pewaris</label>
-                            <input type="text" class="input-control" name="sutradara" placeholder="Rp." oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');" maxlength="12">
+                            <input type="text" class="input-control" name="hutang" id="hutang" placeholder="Rp." oninput="this.value = this.value.replace(/[^0-9]/g, '');" maxlength="12">
                         </div>
                         <div class="form-control">
                             <label class="form-label">Total harta yang akan diwariskan</label><br>
                             <label class="form-label ket">Harta yang dibagikan oleh pihak yang meninggal</label>
-                            <input type="number" class="input-control" name="sutradara" maxlength="12" readonly>
+                            <input type="text" class="input-control" name="totHarta" id="totHarta" maxlength="12" readonly>
                         </div>
                         <!-- Informasi Keluarga Inti Pewaris -->
                         <div class="title">
@@ -107,14 +107,14 @@
                             <label class="form-label ket">Hanya hitung jumlah anak yang beragama islam</label>
                             <div>
                                 <label class="normal jumlah">Anak Laki-laki</label>
-                                <input type="text" inputmode="numeric" class="input-control jumlah top" id="alak" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
+                                <input type="text" class="input-control jumlah top" id="alak" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
                             </div>
                             <div>
                                 <label class="normal jumlah">Anak Perempuan</label>
-                                <input type="number" class="input-control jumlah" id="aper" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
+                                <input type="text" class="input-control jumlah" id="aper" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
                             </div>
                         </div>
-                        <div class="form-control">
+                        <!-- <div class="form-control">
                             <label class="form-label">Apakah pewaris memiliki cucu dari anak laki-lakinya?</label><br>
                             <label class="form-label ket">Hanya untuk cucu dari anak laki-laki saja</label>
                             <div class="input-radio">
@@ -135,9 +135,9 @@
                                 <label class="normal jumlah">Cucu Perempuan</label>
                                 <input type="number" class="input-control jumlah" name="sutradara" maxlength="2">
                             </div>
-                        </div>
+                        </div> -->
                         <!-- Informasi Keluarga Pewaris -->
-                        <div class="title">
+                        <!-- <div class="title">
                             <h3>Informasi Keluarga Pewaris</h3>
                         </div>
                         <div class="form-control">
@@ -183,13 +183,21 @@
                                 <option value="3">Kakek nenek sudah meninggal</option>
                                 <option value="4">Kakek dan nenek masih hidup</option>
                             </select>
-                        </div>
+                        </div> -->
                         <!-- Ringkasan -->
                         <div class="title">
                             <h3>Ringkasan</h3>
                         </div>
+                        <div>
+                            <label class="form-label" style="width: 200px;">Pasangan</label>
+                            <input type="text" class="input-control jumlah top" id="bagPasangan" readonly>
+                        </div>
+                        <div>
+                            <label class="form-label" style="width: 200px;">Anak</label>
+                            <input type="text" class="input-control jumlah" id="bagAnak" readonly>
+                        </div>
                         <input type="reset" class="btn reset" name="reset" value="Reset" >
-                        <input type="submit" class="btn submit" name="submit" value="Hitung" >
+                        <input type="submit" class="btn submit" name="submit" value="Hitung">
                     </form>
                 </div>
             </div>    
@@ -226,7 +234,37 @@
                 </div>
             </div>
         </footer>
+        <script src="assets/js/jquery.js"></script>
         <script src="assets/js/jquery.priceformat.min.js"></script>
         <script src="assets/js/script.js"></script>
+        <script>
+            document.getElementById("harta").addEventListener("keyup", getHarta);
+            document.getElementById("hutang").addEventListener("keyup", getHarta);
+            
+            function getHarta() {
+                var totHarta = document.getElementById("harta").value - document.getElementById("hutang").value;
+                document.getElementById("totHarta").value = totHarta;
+            }
+
+            // $(".harta").keyup(function(){
+            //     var harta = parseInt($("#harta").val())
+            //     var hutang = parseInt($("#hutang").val())
+
+            //     var totHarta = harta - hutang;
+            //     $("#totHarta").attr("value", totHarta)
+            // });
+
+            document.getElementById("alak").addEventListener("keyup", process);
+
+            function process() {
+                var totHarta = document.getElementById("totHarta").value;
+
+                var bagPasangan = totHarta * 0.125;
+                var bagAnak = totHarta - bagPasangan;
+
+                document.getElementById("bagPasangan").value = bagPasangan;
+                document.getElementById("bagAnak").value = bagAnak;
+            }
+        </script>
     </body>
 </html>

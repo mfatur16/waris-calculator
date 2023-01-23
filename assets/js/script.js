@@ -7,8 +7,8 @@
 //     document.getElementById("aper").disabled = true;
 // }
 
-// $('#harta').priceFormat({
-//     prefix: 'Rp.',
+// $('.harta').priceFormat({
+//     prefix: '',
 //     centsLimit: 0,
 //     thousandsSeparator: '.'
 // });
