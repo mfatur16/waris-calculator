@@ -28,6 +28,7 @@
                         <h3>Informasi Umum Pewaris</h3>
                     </div>
                     <form method="GET" enctype="multipart/form-data">
+                        <!-- jenik kelamin -->
                         <div class="form-control">
                             <label class="form-label">Jenis kelamin pewaris</label><br>
                             <label class="form-label ket">Jenis kelamin pihak yang meninggalkan harta</label>
@@ -35,9 +36,21 @@
                                 <input type="radio" name="kelamin" id="lelaki" value="Lelaki" required><label class="normal" for="lelaki">Laki-laki</label>
                             </div>
                             <div class="input-radio bottom">
-                                <input type="radio" name="kelamin" id="perempuan" value="Perempuan"><label class="normal" for="perempuan">Perempuan</label>
+                                <input type="radio" name="kelamin" id="perempuan" value="Perempuan" ><label class="normal" for="perempuan">Perempuan</label>
                             </div>
                         </div>
+                        <!-- status -->
+                        <div class="form-control">
+                            <label class="form-label">Apakah pewaris telah menikah</label><br>
+                            <label class="form-label ket">Hanya perkawinan legal yang diakui negara</label>
+                            <div class="input-radio">
+                                <input type="radio" name="nikah" id="sudahNikah" value="sudahNikah" required><label class="normal" for="sudahNikah">Ya, pewaris telah menikah</label>
+                            </div>
+                            <div class="input-radio bottom">
+                                <input type="radio" name="nikah" id="belumNikah" value="belumNikah"><label class="normal" for="belumNikah">Tidak, pewaris belum menikah</label>
+                            </div>
+                        </div>
+
                         <!-- Informasi Harta Pewaris -->
                         <div class="title">
                             <h3>Informasi Harta Pewaris</h3>
@@ -57,18 +70,21 @@
                             <label class="form-label ket">Harta yang dibagikan oleh pihak yang meninggal</label>
                             <input type="text" class="input-control harta" name="totHarta" id="totHarta" placeholder="Rp.0" readonly>
                         </div>
+
+
                         <!-- Informasi Keluarga Inti Pewaris -->
                         <div class="title">
                             <h3>Informasi Keluarga Inti Pewaris</h3>
                         </div>
+                        <!-- Anak -->
                         <div class="form-control">
                             <label class="form-label">Apakah pewaris memiliki anak dari pasangan yang sah?</label><br>
                             <label class="form-label ket">Anak diluar perkawinan sah belum bisa diakui</label>
                             <div class="input-radio">
-                                <input type="radio" name="anak" id="anak" value="Ya" onclick="anakYa()" required><label class="normal" for="anak">Ya</label>
+                                <input type="radio" name="anak" id="anakYa" value="Ya" onclick="punyaAnak()" required><label class="normal" for="anakYa">Ya</label>
                             </div>
                             <div class="input-radio bottom">
-                                <input type="radio" name="anak" id="anak" value="Tidak" onclick="anakTidak()"><label class="normal" for="anak">Tidak</label>
+                                <input type="radio" name="anak" id="anakTidak" value="Tidak" onclick="punyaAnak()"><label class="normal" for="anakTidak">Tidak</label>
                             </div>
                         </div>
                         <div class="form-control" id="jumlahAnak" hidden>
@@ -80,17 +96,18 @@
                             </div>
                             <div>
                                 <label class="normal jumlah">Anak Perempuan</label>
-                                <input type="text" class="input-control jumlah" id="anakPerempuan" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
+                                <input type="text" class="input-control jumlah" id="anakPerempuan" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, ''); cekStatus()" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
                             </div>
                         </div>
+                        <!-- Cucu -->
                         <div class="form-control">
                             <label class="form-label">Apakah pewaris memiliki cucu dari anak laki-lakinya?</label><br>
                             <label class="form-label ket">Hanya untuk cucu dari anak laki-laki saja</label>
                             <div class="input-radio">
-                                <input type="radio" name="cucu" id="cucu" value="Ya" onclick="cucuYa()" required><label class="normal" for="cucu">Ya</label>
+                                <input type="radio" name="cucu" id="cucuYa" value="Ya" onclick="punyaCucu()" required><label class="normal" for="cucuYa">Ya</label>
                             </div>
                             <div class="input-radio bottom">
-                                <input type="radio" name="cucu" id="cucu" value="Tidak" onclick="cucuTidak()"><label class="normal" for="cucu">Tidak</label>
+                                <input type="radio" name="cucu" id="cucuTidak" value="Tidak" onclick="punyaCucu()"><label class="normal" for="cucuTidak">Tidak</label>
                             </div>
                         </div>
                         <div class="form-control" id="jumlahCucu" hidden>
@@ -105,52 +122,47 @@
                                 <input type="number" class="input-control jumlah" id="cucuPerempuan" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
                             </div>
                         </div>
+
                         <!-- Informasi Keluarga Pewaris -->
                         <div class="title">
                             <h3>Informasi Keluarga Pewaris</h3>
                         </div>
+                        <!-- orang tua -->
                         <div class="form-control">
                             <label class="form-label">Apakah orang tua pewaris masih hidup?</label><br>
                             <label class="form-label ket">Pilih kondisi orang tua kandung pewaris</label>
-                            <select class="input-control" name="ortu" required>
+                            <select class="input-control" name="ortu" id="ortu" required>
                                 <option value="0" selected disabled>Kondisi orang tua kandung pewaris</option>
-                                <option value="1">Bapak masih hidup, ibu sudah meninggal</option>
-                                <option value="2">Ibu masih hidup, bapak sudah meninggal</option>
-                                <option value="3">Bapak dan ibu sudah meninggal</option>
-                                <option value="4">Bapak dan ibu masih hidup</option>
                             </select>
                         </div>
-                        <div class="form-control">
+                        <!-- kakek nenek -->
+                        <div class="form-control" id="nenekIbu" hidden>
                             <label class="form-label">Ketika pewaris meninggal, apakah nenek dari sisi ibu masih hidup?</label><br>
                             <label class="form-label ket">Pilih kondisi nenek dari sisi ibu</label>
                             <div class="input-radio">
-                                <input type="radio" name="nenek" id="lak" value="Lak" required><label class="normal" for="radio">Ya</label>
+                                <input type="radio" name="nenekIbu" id="nenekYa" value="Ya" required><label class="normal" for="nenekYa">Ya</label>
                             </div>
                             <div class="input-radio bottom">
-                                <input type="radio" name="nenek" id="per" value="Per"><label class="normal" for="radio">Tidak</label>
+                                <input type="radio" name="nenekIbu" id="nenekTidak" value="Tidak"><label class="normal" for="nenekYa">Tidak</label>
                             </div>
                         </div>
-                        <!-- <div class="form-control">
+                        <div class="form-control">
                             <label class="form-label">Jumlah saudara pewaris yang masih hidup saat pewaris baru saja meninggal</label><br>
                             <label class="form-label ket">Hanya hitung jumlah anak yang beragama islam</label>
                             <div>
                                 <label class="normal jumlah">Saudara Laki-laki</label>
-                                <input type="text" class="input-control jumlah top" inputmode="numeric" name="sutradara" maxlength="2">
+                                <input type="text" class="input-control jumlah top" id="saudaraLelaki" value="0" name="saudara" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
                             </div>
                             <div>
                                 <label class="normal jumlah">Saudara Perempuan</label>
-                                <input type="text" class="input-control jumlah" inputmode="numeric" name="sutradara" maxlength="2">
+                                <input type="text" class="input-control jumlah" id="saudaraPerempuan" value="0" name="saudara" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
                             </div>
-                        </div> -->
+                        </div>
                         <div class="form-control">
                             <label class="form-label">Apakah kakek-nenek pewaris masih hidup saat pewaris baru saja meninggal?</label><br>
                             <label class="form-label ket">Pilih kondisi kakek-nenek pewaris dari sisi ayah saja</label>
-                            <select class="input-control" name="ortu" id="ortu" required>
-                                <option value="0" selected disabled>Kondisi kakek-nenek dari sisi ayah pewaris</option>
-                                <option value="1">Kakek masih hidup, nenek sudah meninggal</option>
-                                <option value="2">Nenek masih hidup, kakek sudah meninggal</option>
-                                <option value="3">Kakek nenek sudah meninggal</option>
-                                <option value="4">Kakek dan nenek masih hidup</option>
+                            <select class="input-control" id="mbah" required>
+                                <option selected disabled>Kondisi kakek-nenek dari sisi ayah pewaris</option>
                             </select>
                         </div>
                         <!-- Ringkasan -->
@@ -178,11 +190,68 @@
         <script src="assets/js/jquery.js"></script>
         <script src="assets/js/jquery.priceformat.min.js"></script>
         <script src="assets/js/script.js"></script>
+
+        <!-- Hitung JS -->
         <script>
             // Reload
             
+            // Cek Laki - Perempuan
+            function cekStatus() {
+                var totHarta = document.getElementById('totHarta').value;
+                var kelamin = $(":radio[name=kelamin]:checked").val();
+                // console.log(kelamin);
+                if(kelamin == 'Lelaki') {
+                    var nikah = $(":radio[name=nikah]:checked").val();
 
-            // Get Value Harta
+                    if(nikah == 'sudahNikah') {
+                        var anak = $(":radio[name=anak]:checked").val();
+
+
+                        if(anak = "Ya") {
+                            var anakLelaki = document.getElementById('anakLelaki').value; 
+                            var anakPerempuan = document.getElementById('anakPerempuan').value;
+
+                            
+                            var bagPasangan = totHarta.replace('Rp', '').replace(/(\..*?)/g, '') * 0.125;
+                            console.log(bagPasangan)
+                            if(anakLelaki > 0 && anakPerempuan <= 0) {
+                                var bagAnakLelaki = totHarta.replace('Rp', '').replace(/(\..*?)/g, '') - bagPasangan;
+                                console.log(bagAnakLelaki);
+                            }
+                            else if(anakPerempuan > 0 && anakLelaki <= 0) {
+                                var bagAnakPerempuan = (totHarta.replace('Rp', '').replace(/(\..*?)/g, '') - bagPasangan) * 0.5;
+                                console.log(bagAnakPerempuan);
+                            }
+                            else {
+                                var bagAnakLelaki = (totHarta.replace('Rp', '').replace(/(\..*?)/g, '') - bagPasangan) * (2/3);
+                                console.log(bagAnakLelaki);
+
+                                var bagAnakPerempuan = (totHarta.replace('Rp', '').replace(/(\..*?)/g, '') - bagPasangan) * (1/3);
+                                console.log(bagAnakPerempuan);
+                            }
+                        }
+                    }
+                } else {
+                    console.log('ga kebaca');
+                }
+            }
+            
+
+            // Status
+            // function cekStatus() {
+            //     var nikah = $(":radio[name=nikah]:checked").val();
+            //     console.log(nikah);
+            // }
+
+            // Anak
+
+            // Orangtua
+
+            //
+
+            // 
+
+            // Get Value Harta (Hitung Harta)
             document.getElementById('harta').addEventListener('keyup', getHarta);
             document.getElementById('hutang').addEventListener('keyup', getHarta);
             document.getElementById('totHarta').addEventListener('change', getHarta);
@@ -202,23 +271,25 @@
                 });
             }
 
+            
+
             // Hitung
-            function process() {
-                var totHarta = document.getElementById('totHarta').value;
+            // function process() {
+            //     var totHarta = document.getElementById('totHarta').value;
 
-                if () {
+            //     if () {
 
-                } 
-                else {   
-                    if(document.getElementById('Lelaki').checked == true) {   
-                        var bagPasangan = totHarta.replace('Rp', '').replace(/(\..*?)/g, '') * 0.25;  
-                    } else {  
-                        var bagPasangan = totHarta.replace('Rp', '').replace(/(\..*?)/g, '') * 0.5;   
-                    } 
-                } 
+            //     } 
+            //     else {   
+            //         if(document.getElementById('Lelaki').checked == true) {   
+            //             var bagPasangan = totHarta.replace('Rp', '').replace(/(\..*?)/g, '') * 0.25;  
+            //         } else {  
+            //             var bagPasangan = totHarta.replace('Rp', '').replace(/(\..*?)/g, '') * 0.5;   
+            //         } 
+            //     } 
 
-                document.getElementById('bagPasangan').value = bagPasangan;
-            }
+            //     document.getElementById('bagPasangan').value = bagPasangan;
+            // }
         </script>
     </body>
 </html>
