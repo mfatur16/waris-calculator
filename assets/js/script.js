@@ -1,3 +1,19 @@
+function anakYa() {
+    document.getElementById('jumlahAnak').hidden = false;
+}
+
+function anakTidak() {
+    document.getElementById('jumlahAnak').hidden = true;
+}
+
+function cucuYa() {
+    document.getElementById('jumlahCucu').hidden = false;
+}
+
+function cucuTidak() {
+    document.getElementById('jumlahCucu').hidden = true;
+}
+
 // function anakYa() {
 //     document.getElementById("alak").disabled = false;
 //     document.getElementById("aper").disabled = false;
@@ -7,19 +23,21 @@
 //     document.getElementById("aper").disabled = true;
 // }
 
-// $('.harta').priceFormat({
-//     prefix: '',
-//     centsLimit: 0,
-//     thousandsSeparator: '.'
+// $(".harta").keyup(function(){
+//     var harta = parseInt($("#harta").val())
+//     var hutang = parseInt($("#hutang").val())
+
+//     var totHarta = harta - hutang;
+//     $("#totHarta").attr("value", totHarta)
 // });
 
-function anakYa() {
-    document.getElementById('jumlahAnak').hidden = false;
-}
+// function anakYa() {
+//     document.getElementById('jumlahAnak').hidden = false;
+// }
 
-function anakTidak() {
-    document.getElementById('jumlahAnak').hidden = true;
-}
+// function anakTidak() {
+//     document.getElementById('jumlahAnak').hidden = true;
+// }
 
 // function anak() {
 //     if (document.getElementById('anak').value == 'Ya') {
