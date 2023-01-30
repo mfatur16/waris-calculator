@@ -1,3 +1,13 @@
+// Visibilitas Keluarga
+function nikahBelum() {
+    if(document.getElementById('sudahNikah').checked == true) {   
+        document.getElementById('kelInti').hidden = false;   
+    } else {  
+        document.getElementById('kelInti').hidden = true;   
+    } 
+}
+
+// Visibilitas Anak
 function punyaAnak() {
     if(document.getElementById('anakYa').checked == true) {   
         document.getElementById('jumlahAnak').hidden = false;   
@@ -6,6 +16,7 @@ function punyaAnak() {
     }  
 }
 
+// Visibilitas Cucu
 function punyaCucu() {
     if(document.getElementById('cucuYa').checked == true) {   
         document.getElementById('jumlahCucu').hidden = false;   
@@ -14,6 +25,7 @@ function punyaCucu() {
     }  
 }
 
+// Orang Tua
 var ortuArray = new Array(
     "Bapak masih hidup, ibu sudah meninggal", 
     "Ibu masih hidup, bapak sudah meninggal", 
@@ -32,12 +44,12 @@ document.getElementById('ortu').addEventListener('mouseup', ortu);
 
 function ortu() {
     // console.log(ortuArray[2]);
-    if(document.getElementById('ortu').value == ortuArray[2]) {
+    if(document.getElementById('ortu').value == ortuArray[0] || document.getElementById('ortu').value == ortuArray[2]) {
         document.getElementById('nenekIbu').hidden = false; 
     }
     else {
         document.getElementById('nenekIbu').hidden = true; 
-    }
+    }
 }
 
 // Mbah Ayah
@@ -55,6 +67,29 @@ for (var i = 0; i < mbahArray.length; ++i) {
     dropdown[dropdown.length] = new Option(mbahArray[i], mbahArray[i]);
 }
 
+// Hitung Harta
+document.getElementById('harta').addEventListener('keyup', getHarta);
+document.getElementById('hutang').addEventListener('keyup', getHarta);
+document.getElementById('totHarta').addEventListener('change', getHarta);
+
+function getHarta() {
+    var totHarta = document.getElementById('harta').value.replace('Rp', '').replace(/(\..*?)/g, '') - document.getElementById('hutang').value.replace('Rp', '').replace(/(\..*?)/g, '');
+    if (totHarta < 0) {
+        totHarta = 0;
+    }
+
+    document.getElementById('totHarta').value = totHarta;
+
+    $('.harta').priceFormat({
+        prefix: 'Rp.',
+        limit: 13,
+        centsLimit: 0,
+        thousandsSeparator: '.'
+    });
+}
+
+
+
 
 
 // function anakYa() {
@@ -65,13 +100,13 @@ for (var i = 0; i < mbahArray.length; ++i) {
 //     document.getElementById('jumlahAnak').hidden = true;
 // }
 
-function cucuYa() {
-    document.getElementById('jumlahCucu').hidden = false;
-}
+// function cucuYa() {
+//     document.getElementById('jumlahCucu').hidden = false;
+// }
 
-function cucuTidak() {
-    document.getElementById('jumlahCucu').hidden = true;
-}
+// function cucuTidak() {
+//     document.getElementById('jumlahCucu').hidden = true;
+// }
 
 // function anakYa() {
 //     document.getElementById("alak").disabled = false;
