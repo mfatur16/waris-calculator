@@ -1,12 +1,14 @@
+@font-face {
+    font-family: "Arab";
+    src: url('https://github.com/ianoit/Al-Quran-JSON-Indonesia-Kemenag/blob/master/fonts/LPMQ.ttf');
+    }
+
 .efek::after {
     content: '';
     display: block;
     position: absolute;
     right: 0;
     bottom: 0;
-    
-
-   
 }
 
 .big_bg::after {
