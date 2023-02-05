@@ -8,7 +8,7 @@
         <!-- <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="assets/css/output.css">
         <link rel="stylesheet" href="assets/css/new.css"> -->
-        <title>Hitung | WARIS</title>
+        <title>Hasil | WARIS</title>
     </head>
     <body>
         <header class="flex justify-between fixed w-[100%] top-0 font-sans font-bold bg-[#223134f2] text-white h-16 items-center px-6 z-20">
@@ -30,43 +30,43 @@
                         </div>
                         <div>
                             <label class="form-label" style="width: 200px;">Pasangan</label>
-                            <input type="text" class="input-control jumlah top" id="bagPasangan" value="Rp.0" readonly>
+                            <input type="text" class="input-control jumlah top" id="locPasangan" value="Rp.0" readonly>
                         </div>
                         <div>
                             <label class="form-label" style="width: 200px;">Anak Laki-laki</label>
-                            <input type="text" class="input-control jumlah" id="bagAnak" value="Rp.0" readonly>
+                            <input type="text" class="input-control jumlah" id="locAnakLelaki" value="Rp.0"  readonly>
                         </div>
                         <div>
                             <label class="form-label" style="width: 200px;">Anak Perempuan</label>
-                            <input type="text" class="input-control jumlah" id="bagAnak" value="Rp.0" readonly>
+                            <input type="text" class="input-control jumlah" id="locAnakPerempuan" value="Rp.0" readonly>
                         </div>
                         <div>
-                            <label class="form-label" style="width: 200px;">Cucu Laki-laki</label>
-                            <input type="text" class="input-control jumlah" id="bagAnak" value="Rp.0" readonly>
-                        </div>
-                        <div>
-                            <label class="form-label" style="width: 200px;">Cucu Perempuan</label>
-                            <input type="text" class="input-control jumlah" id="bagAnak" value="Rp.0" readonly>
-                        </div>
-                        <div>
-                            <label class="form-label" style="width: 200px;">Ayah</label>
-                            <input type="text" class="input-control jumlah" id="bagAnak" value="Rp.0" readonly>
+                            <label class="form-label" style="width: 200px;">Bapak</label>
+                            <input type="text" class="input-control jumlah" id="locBapak" value="Rp.0" readonly>
                         </div>
                         <div>
                             <label class="form-label" style="width: 200px;">Ibu</label>
-                            <input type="text" class="input-control jumlah" id="bagAnak" value="Rp.0" readonly>
+                            <input type="text" class="input-control jumlah" id="locIbu" value="Rp.0" readonly>
+                        </div>
+                        <div>
+                            <label class="form-label" style="width: 200px;">Kakek dari Bapak</label>
+                            <input type="text" class="input-control jumlah" id="locKakek" value="Rp.0" readonly>
+                        </div>
+                        <div>
+                            <label class="form-label" style="width: 200px;">Nenek dari Bapak</label>
+                            <input type="text" class="input-control jumlah" id="locNenek" value="Rp.0" readonly>
                         </div>
                         <div>
                             <label class="form-label" style="width: 200px;">Nenek dari Ibu</label>
-                            <input type="text" class="input-control jumlah" id="bagAnak" value="Rp.0" readonly>
+                            <input type="text" class="input-control jumlah harta" id="locNenekI" value="Rp.0" readonly>
                         </div>
                         <div>
-                            <label class="form-label" style="width: 200px;">Kakek dari Ayah</label>
-                            <input type="text" class="input-control jumlah" id="bagAnak" value="Rp.0" readonly>
+                            <label class="form-label" style="width: 200px;">Cucu Lelaki</label>
+                            <input type="text" class="input-control jumlah" id="locCucuLelaki" value="Rp.0" readonly>
                         </div>
                         <div>
-                            <label class="form-label" style="width: 200px;">Nenek dari Ayah</label>
-                            <input type="text" class="input-control jumlah" id="bagAnak" value="Rp.0" readonly>
+                            <label class="form-label" style="width: 200px;">Cucu Perempuan</label>
+                            <input type="text" class="input-control jumlah" id="locCucuPerempuan" value="Rp.0" readonly>
                         </div>
                         <div>
                             <label class="form-label" style="width: 200px;">Saudara</label>
@@ -82,9 +82,11 @@
             <p>Made with &#10084; &copy;2023 <b><a href="index.html">WARIS</a></b></p>
             <p>Tugas Manajemen | Semester 5 Teknik Informatika | IBM Bekasi Jaya! Jaya! Jaya!</p>
         </footer>
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/jquery.priceformat.min.js"></script>
         <script src="assets/js/script.js"></script>
+        <script src="assets/js/hitung.js"></script>
         <script>
-           
         </script>
     </body>
 </html>
