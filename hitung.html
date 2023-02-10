@@ -21,147 +21,151 @@
             </nav>
         </header>
         <main id="main" class="flex flex-col pt-[100px] pb-[40px] items-center justify-center bg-[#52ba5bcf]">
+            <form class="rounded-[20px] p-10 bg-[#ffffff9c] drop-shadow-xl w-[850px]" method="GET" action="hasil.html" autocomplete="off" enctype="multipart/form-data">
+                
+                <!-- Informasi Umum Pewaris -->
+                <div class="text-[28px] font-bold border-b-[3px] border-black">
+                    <h3>Informasi Umum Pewaris</h3>
+                </div>
+                <div class="form-control pt-2">
+                    <label  class="form-label text-lg font-bold">Jenis kelamin pewaris</label><br>
+                    <label class="text-[#00000080]">Jenis kelamin pihak yang meninggalkan harta</label>
+                    <div class="form-check input-radio pt-2">
+                        <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="kelamin" id="lelaki" value="Lelaki" required><label class="form-check-label inline-block text-gray-800 normal" for="lelaki">Laki-laki</label>
+                    </div>
+                    <div class="form-check input-radio bottom">
+                        <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="kelamin" id="perempuan" value="Perempuan" ><label class="form-check-label inline-block text-gray-800 normal" for="perempuan">Perempuan</label>
+                    </div>
+                </div>
+                <div class="form-control pt-2">
+                    <label  class="form-label text-lg font-bold">Apakah pewaris telah menikah</label><br>
+                    <label class="text-[#00000080]">Hanya perkawinan legal yang diakui negara</label>
+                    <div class="input-radio pt-2">
+                        <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="nikah" id="sudahNikah" value="sudahNikah" onclick="nikahBelum()" required><label class="form-check-label inline-block text-gray-800 normal" for="sudahNikah">Ya, pewaris telah menikah</label>
+                    </div>
+                    <div class="input-radio bottom">
+                        <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="nikah" id="belumNikah" value="belumNikah" onclick="nikahBelum()"><label class="form-check-label inline-block text-gray-800 normal" for="belumNikah">Tidak, pewaris belum menikah</label>
+                    </div>
+                </div>
+                
+                <!-- Informasi Harta Pewaris -->
+                <div class="text-[28px] font-bold mt-[28px] border-b-[3px] border-black">
+                    <h3>Informasi Harta Pewaris</h3>
+                </div>
+                <div class="pt-2">
+                    <label  class="form-label text-lg font-bold">Perkiraan total harta yang dimiliki pewaris</label><br>
+                    <label class="text-[#00000080]">Harta yang dimiliki oleh pewaris</label>
+                    <input type="text" class="mt-2 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none format" name="harta" id="harta" placeholder="Rp.0" maxlength="17" required>
+                </div>
+                <div class="pt-2">
+                    <label  class="form-label text-lg font-bold">Perkiraan total hutang yang dimiliki pewaris</label><br>
+                    <label class="text-[#00000080]">Hutang yang dimiliki oleh pewaris</label>
+                    <input type="text" class="mt-2 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none format" name="hutang" id="hutang" placeholder="Rp.0" maxlength="17">
+                </div>
+                <div class="pt-2">
+                    <label  class="form-label text-lg font-bold">Total harta yang akan diwariskan</label><br>
+                    <label class="text-[#00000080]">Harta yang dibagikan oleh pihak yang meninggal</label>
+                    <input type="text" class="mt-2 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none format" name="totHarta" id="totHarta" placeholder="Rp.0" readonly>
+                </div>
 
-                    <form class="rounded-[20px] p-10 bg-[#ffffff9c] drop-shadow-xl" method="GET" action="hasil.html" autocomplete="off" enctype="multipart/form-data">
-                        <!-- Informasi Umum Pewaris -->
-                        <div class="title">
-                            <h3>Informasi Umum Pewaris</h3>
+                <!-- Informasi Keluarga Inti Pewaris -->
+                <div id="kelInti" hidden>
+                    <div class="text-[28px] font-bold mt-[28px] border-b-[3px] border-black">
+                        <h3>Informasi Keluarga Inti Pewaris</h3>
+                    </div>
+                    <div class="form-control pt-2">
+                        <label  class="form-label text-lg font-bold">Apakah pewaris memiliki anak dari pasangan yang sah?</label><br>
+                        <label class="text-[#00000080]">Anak diluar perkawinan sah belum bisa diakui</label>
+                        <div class="input-radio pt-2">
+                            <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="anak" id="anakYa" value="Ya" onclick="punyaAnak()" required><label class="form-check-label inline-block text-gray-800 normal" for="anakYa">Ya</label>
                         </div>
-                        <div class="form-control pt-2">
-                            <label  class="form-label text-lg font-bold">Jenis kelamin pewaris</label><br>
-                            <label class="text-[#00000080]">Jenis kelamin pihak yang meninggalkan harta</label>
-                            <div class="form-check input-radio pt-2">
-                                <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="kelamin" id="lelaki" value="Lelaki" required><label class="form-check-label inline-block text-gray-800 normal" for="lelaki">Laki-laki</label>
-                            </div>
-                            <div class="form-check input-radio bottom">
-                                <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="kelamin" id="perempuan" value="Perempuan" ><label class="form-check-label inline-block text-gray-800 normal" for="perempuan">Perempuan</label>
-                            </div>
+                        <div class="input-radio bottom">
+                            <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="anak" id="anakTidak" value="Tidak" onclick="punyaAnak()"><label class="form-check-label inline-block text-gray-800 normal" for="anakTidak">Tidak</label>
                         </div>
-                        <div class="form-control pt-2">
-                            <label  class="form-label text-lg font-bold">Apakah pewaris telah menikah</label><br>
-                            <label class="text-[#00000080]">Hanya perkawinan legal yang diakui negara</label>
-                            <div class="input-radio pt-2">
-                                <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="nikah" id="sudahNikah" value="sudahNikah" onclick="nikahBelum()" required><label class="form-check-label inline-block text-gray-800 normal" for="sudahNikah">Ya, pewaris telah menikah</label>
-                            </div>
-                            <div class="input-radio bottom">
-                                <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="nikah" id="belumNikah" value="belumNikah" onclick="nikahBelum()"><label class="form-check-label inline-block text-gray-800 normal" for="belumNikah">Tidak, pewaris belum menikah</label>
-                            </div>
+                    </div>
+                </div>
+                <div id="anakAda" hidden>
+                    <div class="form-control pt-2">
+                        <label  class="form-label text-lg font-bold">Jumlah anak pewaris yang masih hidup saat pewaris baru saja meninggal</label><br>
+                        <label class="text-[#00000080]">Hanya hitung jumlah anak yang beragama islam</label>
+                        <div>
+                            <label class="w-[188px] mb-[2px] inline-block align-middle">Anak Laki-laki</label>
+                            <input type="text" class="mt-1 w-[75%] px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none jumlah top" id="anakLelaki" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
                         </div>
-                        <!-- Informasi Harta Pewaris -->
-                        <div class="title">
-                            <h3>Informasi Harta Pewaris</h3>
+                        <div>
+                            <label class="w-[188px] mb-[2px] inline-block align-middle">Anak Perempuan</label>
+                            <input type="text" class="mt-1 w-[75%] px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none jumlah" id="anakPerempuan" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, ''); hitung()" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
                         </div>
-                        <div class="form-control pt-2">
-                            <label  class="form-label text-lg font-bold">Perkiraan total harta yang dimiliki pewaris</label><br>
-                            <label class="text-[#00000080]">Harta yang dimiliki oleh pewaris</label>
-                            <input type="text" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none format" name="harta" id="harta" placeholder="Rp.0" required>
+                    </div>
+                    <div class="form-control pt-2">
+                        <label  class="form-label text-lg font-bold">Apakah pewaris memiliki cucu dari anak laki-lakinya?</label><br>
+                        <label class="text-[#00000080]">Hanya untuk cucu dari anak laki-laki saja</label>
+                        <div class="input-radio pt-2">
+                            <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="cucu" id="cucuYa" value="Ya" onclick="punyaCucu()" required><label class="form-check-label inline-block text-gray-800 normal" for="cucuYa">Ya</label>
                         </div>
-                        <div class="form-control pt-2">
-                            <label  class="form-label text-lg font-bold">Perkiraan total hutang yang dimiliki pewaris</label><br>
-                            <label class="text-[#00000080]">Hutang yang dimiliki oleh pewaris</label>
-                            <input type="text" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none format" name="hutang" id="hutang" placeholder="Rp.0">
+                        <div class="input-radio bottom">
+                            <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="cucu" id="cucuTidak" value="Tidak" onclick="punyaCucu()"><label class="form-check-label inline-block text-gray-800 normal" for="cucuTidak">Tidak</label>
                         </div>
-                        <div class="form-control pt-2">
-                            <label  class="form-label text-lg font-bold">Total harta yang akan diwariskan</label><br>
-                            <label class="text-[#00000080]">Harta yang dibagikan oleh pihak yang meninggal</label>
-                            <input type="text" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none format" name="totHarta" id="totHarta" placeholder="Rp.0" readonly>
-                        </div>
-                        <!-- Informasi Keluarga Inti Pewaris -->
-                        <div id="kelInti" hidden>
-                            <div class="title">
-                                <h3>Informasi Keluarga Inti Pewaris</h3>
-                            </div>
-                            <div class="form-control pt-2">
-                                <label  class="form-label text-lg font-bold">Apakah pewaris memiliki anak dari pasangan yang sah?</label><br>
-                                <label class="text-[#00000080]">Anak diluar perkawinan sah belum bisa diakui</label>
-                                <div class="input-radio pt-2">
-                                    <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="anak" id="anakYa" value="Ya" onclick="punyaAnak()" required><label class="form-check-label inline-block text-gray-800 normal" for="anakYa">Ya</label>
-                                </div>
-                                <div class="input-radio bottom">
-                                    <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="anak" id="anakTidak" value="Tidak" onclick="punyaAnak()"><label class="form-check-label inline-block text-gray-800 normal" for="anakTidak">Tidak</label>
-                                </div>
-                            </div>
-                            <div class="form-control pt-2" id="jumlahAnak" hidden>
-                                <label  class="form-label text-lg font-bold">Jumlah anak pewaris yang masih hidup saat pewaris baru saja meninggal</label><br>
-                                <label class="text-[#00000080]">Hanya hitung jumlah anak yang beragama islam</label>
-                                <div>
-                                    <label class="normal jumlah">Anak Laki-laki</label>
-                                    <input type="text" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none jumlah top" id="anakLelaki" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
-                                </div>
-                                <div>
-                                    <label class="normal jumlah">Anak Perempuan</label>
-                                    <input type="text" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none jumlah" id="anakPerempuan" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, ''); hitung()" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
-                                </div>
-                            </div>
-                            <div class="form-control pt-2">
-                                <label  class="form-label text-lg font-bold">Apakah pewaris memiliki cucu dari anak laki-lakinya?</label><br>
-                                <label class="text-[#00000080]">Hanya untuk cucu dari anak laki-laki saja</label>
-                                <div class="input-radio pt-2">
-                                    <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="cucu" id="cucuYa" value="Ya" onclick="punyaCucu()" required><label class="form-check-label inline-block text-gray-800 normal" for="cucuYa">Ya</label>
-                                </div>
-                                <div class="input-radio bottom">
-                                    <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="cucu" id="cucuTidak" value="Tidak" onclick="punyaCucu()"><label class="form-check-label inline-block text-gray-800 normal" for="cucuTidak">Tidak</label>
-                                </div>
-                            </div>
-                            <div class="form-control pt-2" id="jumlahCucu" hidden>
-                                <label  class="form-label text-lg font-bold">Jumlah cucu pewaris yang masih hidup saat pewaris baru saja meninggal</label><br>
-                                <label class="text-[#00000080]">Tidak termasuk cucu dari anak perempuannya</label>
-                                <div>
-                                    <label class="normal jumlah">Cucu Laki-laki</label>
-                                    <input type="number" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none jumlah top" id="cucuLelaki" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
-                                </div>
-                                <div>
-                                    <label class="normal jumlah">Cucu Perempuan</label>
-                                    <input type="number" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none jumlah" id="cucuPerempuan" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Informasi Keluarga Pewaris -->
-                        <div class="title">
-                            <h3>Informasi Keluarga Pewaris</h3>
-                        </div>
-                        <div class="form-control pt-2">
-                            <label  class="form-label text-lg font-bold">Apakah orang tua pewaris masih hidup?</label><br>
-                            <label class="text-[#00000080]">Pilih kondisi orang tua kandung pewaris</label>
-                            <select class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none" id="ortu" required>
-                                <option id="ortuOpt" selected>Kondisi orang tua kandung pewaris</option>
-                            </select>
-                        </div>
-                        <div class="form-control pt-2" id="nenekIbu" hidden>
-                            <label  class="form-label text-lg font-bold">Ketika pewaris meninggal, apakah nenek dari sisi ibu masih hidup?</label><br>
-                            <label class="text-[#00000080]">Pilih kondisi nenek dari sisi ibu</label>
-                            <div class="input-radio pt-2">
-                                <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="nenekIbu" id="nenekYa" value="Ya" required><label class="form-check-label inline-block text-gray-800 normal" for="nenekYa">Ya</label>
-                            </div>
-                            <div class="input-radio bottom">
-                                <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="nenekIbu" id="nenekTidak" value="Tidak"><label class="form-check-label inline-block text-gray-800 normal" for="nenekTidak">Tidak</label>
-                            </div>
-                        </div>
-                        <div class="form-control pt-2">
-                            <label  class="form-label text-lg font-bold">Jumlah saudara pewaris yang masih hidup saat pewaris baru saja meninggal</label><br>
-                            <label class="text-[#00000080]">Hanya hitung jumlah anak yang beragama islam</label>
-                            <div>
-                                <label class="normal jumlah">Saudara Laki-laki</label>
-                                <input type="text" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none jumlah top" id="saudaraLelaki" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
-                            </div>
-                            <div>
-                                <label class="normal jumlah">Saudara Perempuan</label>
-                                <input type="text" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none jumlah" id="saudaraPerempuan" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
-                            </div>
-                        </div>
-                        <div class="form-control pt-2">
-                            <label  class="form-label text-lg font-bold">Apakah kakek-nenek pewaris masih hidup saat pewaris baru saja meninggal?</label><br>
-                            <label class="text-[#00000080]">Pilih kondisi kakek-nenek pewaris dari sisi ayah saja</label>
-                            <select class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none" id="mbah" required>
-                                <option id="mbahOpt" selected>Kondisi kakek-nenek dari sisi ayah pewaris</option>
-                            </select>
-                        </div>
-                        <div class="flex justify-end gap-3 pt-6">
-                            <input type="reset" class="bg-gray-400 border-gray-500 hover:border-transparent font-semibold text-white hover:bg-red-700 py-2 px-4 rounded-md reset" name="reset" value="Reset">
-                            <input type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md submit" name="submit" value="Hitung" onclick="hitung()">
-                        </div>
-                    </form>
-   
+                    </div>
+                </div>
+                <div class="form-control pt-2" id="jumlahCucu" hidden>
+                    <label  class="form-label text-lg font-bold">Jumlah cucu pewaris yang masih hidup saat pewaris baru saja meninggal</label><br>
+                    <label class="text-[#00000080]">Tidak termasuk cucu dari anak perempuannya</label>
+                    <div>
+                        <label class="w-[188px] mb-[2px] inline-block align-middle">Cucu Laki-laki</label>
+                        <input type="text" class="mt-1 w-[75%] px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none jumlah top" id="cucuLelaki" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
+                    </div>
+                    <div>
+                        <label class="w-[188px] mb-[2px] inline-block align-middle">Cucu Perempuan</label>
+                        <input type="text" class="mt-1 w-[75%] px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none jumlah" id="cucuPerempuan" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
+                    </div>
+                </div>
+
+                <!-- Informasi Keluarga Pewaris -->
+                <div class="text-[28px] font-bold mt-[28px] border-b-[3px] border-black">
+                    <h3>Informasi Keluarga Pewaris</h3>
+                </div>
+                <div class="form-control pt-2">
+                    <label  class="form-label text-lg font-bold">Apakah orang tua pewaris masih hidup?</label><br>
+                    <label class="text-[#00000080]">Pilih kondisi orang tua kandung pewaris</label>
+                    <select class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none" id="ortu" required>
+                        <option id="ortuOpt" selected>Kondisi orang tua kandung pewaris</option>
+                    </select>
+                </div>
+                <div class="form-control pt-2" id="nenekIbu" hidden>
+                    <label  class="form-label text-lg font-bold">Ketika pewaris meninggal, apakah nenek dari sisi ibu masih hidup?</label><br>
+                    <label class="text-[#00000080]">Pilih kondisi nenek dari sisi ibu</label>
+                    <div class="input-radio pt-2">
+                        <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="nenekIbu" id="nenekYa" value="Ya" required><label class="form-check-label inline-block text-gray-800 normal" for="nenekYa">Ya</label>
+                    </div>
+                    <div class="input-radio bottom">
+                        <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="nenekIbu" id="nenekTidak" value="Tidak"><label class="form-check-label inline-block text-gray-800 normal" for="nenekTidak">Tidak</label>
+                    </div>
+                </div>
+                <div class="form-control pt-2">
+                    <label  class="form-label text-lg font-bold">Jumlah saudara pewaris yang masih hidup saat pewaris baru saja meninggal</label><br>
+                    <label class="text-[#00000080]">Hanya hitung jumlah anak yang beragama islam</label>
+                    <div>
+                        <label class="w-[188px] mb-[2px] inline-block align-middle">Saudara Laki-laki</label>
+                        <input type="text" class="mt-1 w-[75%] px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none" id="saudaraLelaki" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
+                    </div>
+                    <div>
+                        <label class="w-[188px] mb-[2px] inline-block align-middle">Saudara Perempuan</label>
+                        <input type="text" class="mt-1 w-[75%] px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none" id="saudaraPerempuan" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
+                    </div>
+                </div>
+                <div class="form-control pt-2">
+                    <label  class="form-label text-lg font-bold">Apakah kakek-nenek pewaris masih hidup saat pewaris baru saja meninggal?</label><br>
+                    <label class="text-[#00000080]">Pilih kondisi kakek-nenek pewaris dari sisi ayah saja</label>
+                    <select class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none" id="mbah" required>
+                        <option id="mbahOpt" selected>Kondisi kakek-nenek dari sisi ayah pewaris</option>
+                    </select>
+                </div>
+                <div class="flex justify-end gap-3 pt-6">
+                    <input type="reset" class="bg-gray-400 border-gray-500 hover:border-transparent font-semibold text-white hover:bg-red-700 py-2 px-4 rounded-md reset" name="reset" value="Reset">
+                    <input type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md submit" name="submit" value="Hitung" onclick="hitung()">
+                </div>
+            </form>
         </main>
         <footer class="h-1/4 bg-[#223134f2] text-white py-6 px-8">
             <p>Made with &#10084; &copy;2023 <b><a href="index.html">Waris-in</a></b></p>

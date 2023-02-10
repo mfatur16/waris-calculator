@@ -27,7 +27,6 @@ function nikahBelum() {
     } else {  
         document.getElementById('kelInti').hidden = true; 
         document.getElementById('anakYa').removeAttribute('required');
-        document.getElementById('cucuYa').removeAttribute('required');
     } 
 }
 
@@ -35,9 +34,10 @@ function nikahBelum() {
 // Visibilitas Anak
 function punyaAnak() {
     if(document.getElementById('anakYa').checked == true) {   
-        document.getElementById('jumlahAnak').hidden = false;   
+        document.getElementById('anakAda').hidden = false;  
     } else {  
-        document.getElementById('jumlahAnak').hidden = true;   
+        document.getElementById('anakAda').hidden = true; 
+        document.getElementById('cucuYa').removeAttribute('required');
     }  
 }
 
