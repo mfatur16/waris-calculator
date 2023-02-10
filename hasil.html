@@ -3,12 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link rel="icon" href="assets/ico/favicon.ico"> -->
-        <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
-        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.tailwindcss.com"></script> 
         <link rel="stylesheet" href="assets/css/output.css">
-        <link rel="stylesheet" href="assets/css/new.css">
-        <title>Hasil | WARIS</title>
+        <link rel="stylesheet" href="assets/css/new.css"> 
+        <title>Hasil | Waris-in</title>
     </head>
     <body>
         <header class="flex justify-between fixed w-[100%] top-0 font-sans font-bold bg-[#223134f2] text-white h-16 items-center px-6 z-20">
@@ -20,63 +18,67 @@
                 <a class="rounded-[5px] flex p-4 h-10 text-lg items-center text-[#d0d0d0] hover:bg-[#3a555bf2] hover:text-white" href="tentang.html">Tentang</a>
             </nav>
         </header>
-        <main id="main" class="flex flex-col pt-[100px] pb-[40px] items-center justify-center bg-[#52ba5bcf]">
-        
-                    <form class="rounded-[20px] p-10 bg-[#ffffff9c] drop-shadow-xl w-2/4" method="GET" enctype="multipart/form-data">
+        <main id="main">
+            <div class="container form">
+                <div class="form-content">
+                    <form method="GET" enctype="multipart/form-data">
                         <!-- Hasil -->
-                        <div class="font-bold tracking-wide text-lg">
-                            <h3>HASIL PERHITUNGAN</h3>
+                        <div class="title">
+                            <h3>Hasil</h3>
                         </div>
                         <div>
-                            <label  class="form-label text-lg font-semibold">Pasangan</label>
-                            <input type="text" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none input-control jumlah top" id="locPasangan" value="Rp.0" readonly>
+                            <label class="form-label" style="width: 200px;">Pasangan</label>
+                            <input type="text" class="input-control jumlah top" id="locPasangan" value="Rp.0" readonly>
                         </div>
                         <div>
-                            <label  class="form-label text-lg font-semibold">Anak Laki-laki</label>
-                            <input type="text" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none input-control jumlah top" id="locAnakLelaki" value="Rp.0"  readonly>
+                            <label class="form-label" style="width: 200px;">Anak Laki-laki</label>
+                            <input type="text" class="input-control jumlah" id="locAnakLelaki" value="Rp.0"  readonly>
                         </div>
                         <div>
-                            <label  class="form-label text-lg font-semibold">Anak Perempuan</label>
-                            <input type="text" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none input-control jumlah top" id="locAnakPerempuan" value="Rp.0" readonly>
+                            <label class="form-label" style="width: 200px;">Anak Perempuan</label>
+                            <input type="text" class="input-control jumlah" id="locAnakPerempuan" value="Rp.0" readonly>
                         </div>
                         <div>
-                            <label  class="form-label text-lg font-semibold">Bapak</label>
-                            <input type="text" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none input-control jumlah top" id="locBapak" value="Rp.0" readonly>
+                            <label class="form-label" style="width: 200px;">Bapak</label>
+                            <input type="text" class="input-control jumlah" id="locBapak" value="Rp.0" readonly>
                         </div>
                         <div>
-                            <label  class="form-label text-lg font-semibold">Ibu</label>
-                            <input type="text" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none input-control jumlah top" id="locIbu" value="Rp.0" readonly>
+                            <label class="form-label" style="width: 200px;">Ibu</label>
+                            <input type="text" class="input-control jumlah" id="locIbu" value="Rp.0" readonly>
                         </div>
                         <div>
-                            <label  class="form-label text-lg font-semibold">Kakek dari Bapak</label>
-                            <input type="text" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none input-control jumlah top" id="locKakek" value="Rp.0" readonly>
+                            <label class="form-label" style="width: 200px;">Kakek dari Bapak</label>
+                            <input type="text" class="input-control jumlah" id="locKakek" value="Rp.0" readonly>
                         </div>
                         <div>
-                            <label  class="form-label text-lg font-semibold">Nenek dari Bapak</label>
-                            <input type="text" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none input-control jumlah top" id="locNenek" value="Rp.0" readonly>
+                            <label class="form-label" style="width: 200px;">Nenek dari Bapak</label>
+                            <input type="text" class="input-control jumlah" id="locNenek" value="Rp.0" readonly>
                         </div>
                         <div>
-                            <label  class="form-label text-lg font-semibold">Nenek dari Ibu</label>
-                            <input type="text" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none input-control jumlah harta" id="locNenekI" value="Rp.0" readonly>
+                            <label class="form-label" style="width: 200px;">Nenek dari Ibu</label>
+                            <input type="text" class="input-control jumlah harta" id="locNenekI" value="Rp.0" readonly>
                         </div>
                         <div>
-                            <label  class="form-label text-lg font-semibold">Cucu Lelaki</label>
-                            <input type="text" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none input-control jumlah top" id="locCucuLelaki" value="Rp.0" readonly>
+                            <label class="form-label" style="width: 200px;">Cucu Lelaki</label>
+                            <input type="text" class="input-control jumlah" id="locCucuLelaki" value="Rp.0" readonly>
                         </div>
                         <div>
-                            <label  class="form-label text-lg font-semibold">Cucu Perempuan</label>
-                            <input type="text" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none input-control jumlah top" id="locCucuPerempuan" value="Rp.0" readonly>
+                            <label class="form-label" style="width: 200px;">Cucu Perempuan</label>
+                            <input type="text" class="input-control jumlah" id="locCucuPerempuan" value="Rp.0" readonly>
                         </div>
                         <div>
-                            <label  class="form-label text-lg font-semibold">Saudara</label>
-                            <input type="text" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none input-control jumlah top" id="bagAnak" value="Rp.0" readonly>
+                            <label class="form-label" style="width: 200px;">Saudara Laki-laki</label>
+                            <input type="text" class="input-control jumlah" id="locSaudaraLelaki" value="Rp.0" readonly>
                         </div>
-                        <div class="flex justify-end gap-3 pt-6">
-                            <input type="submit" class="bg-gray-400 border-gray-500 hover:border-transparent font-semibold text-white hover:bg-red-700 py-2 px-4 rounded-md reset" name="submit" value="Kembali">
-                            <input type="reset" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md submit" name="reset" value="Beranda">
+                        <div>
+                            <label class="form-label" style="width: 200px;">Saudara Perempuan</label>
+                            <input type="text" class="input-control jumlah" id="locSaudaraPerempuan" value="Rp.0" readonly>
                         </div>
+                        <input type="reset" class="btn reset" name="reset" value="Beranda">
+                        <input type="submit" class="btn submit" name="submit" value="Kembali">
                     </form>
-                
+                </div>
+            </div>    
         </main>
         <footer class="h-1/4 bg-[#223134f2] text-white py-6 px-8">
             <p>Made with &#10084; &copy;2023 <b><a href="index.html">Waris-in</a></b></p>
