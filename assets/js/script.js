@@ -27,6 +27,8 @@ function nikahBelum() {
     } else {  
         document.getElementById('kelInti').hidden = true; 
         document.getElementById('anakYa').removeAttribute('required');
+        document.getElementById('cucuYa').removeAttribute('checked');
+        document.getElementById('cucuYa').removeAttribute('required');
     } 
 }
 

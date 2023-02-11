@@ -107,18 +107,20 @@
                             <input type="radio" class="form-check-input appearance-none focus:ring-4 rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="cucu" id="cucuTidak" value="Tidak" onclick="punyaCucu()"><label class="form-check-label inline-block text-gray-800 normal" for="cucuTidak">Tidak</label>
                         </div>
                     </div>
-                </div>
-                <div class="form-control pt-2" id="jumlahCucu" hidden>
-                    <label  class="form-label text-lg font-bold">Jumlah cucu pewaris yang masih hidup saat pewaris baru saja meninggal</label><br>
-                    <label class="text-[#00000080]">Tidak termasuk cucu dari anak perempuannya</label>
-                    <div>
-                        <label class="w-[188px] mb-[2px] inline-block align-middle">Cucu Laki-laki</label>
-                        <input type="text" class="mt-1 w-[75%] px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none jumlah top" id="cucuLelaki" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
+                    <!-- Harusnya nyampe sini -->
+                    <div class="form-control pt-2" id="jumlahCucu" hidden>
+                        <label  class="form-label text-lg font-bold">Jumlah cucu pewaris yang masih hidup saat pewaris baru saja meninggal</label><br>
+                        <label class="text-[#00000080]">Tidak termasuk cucu dari anak perempuannya</label>
+                        <div>
+                            <label class="w-[188px] mb-[2px] inline-block align-middle">Cucu Laki-laki</label>
+                            <input type="text" class="mt-1 w-[75%] px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none jumlah top" id="cucuLelaki" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
+                        </div>
+                        <div>
+                            <label class="w-[188px] mb-[2px] inline-block align-middle">Cucu Perempuan</label>
+                            <input type="text" class="mt-1 w-[75%] px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none jumlah" id="cucuPerempuan" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
+                        </div>
                     </div>
-                    <div>
-                        <label class="w-[188px] mb-[2px] inline-block align-middle">Cucu Perempuan</label>
-                        <input type="text" class="mt-1 w-[75%] px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none jumlah" id="cucuPerempuan" value="0" onfocus="this.value = this.value.replace(value, '');" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onblur="if (this.value == '') {this.value = this.value.replace('', 0)};" maxlength="2">
-                    </div>
+                    <!-- ini kaga -->
                 </div>
 
                 <!-- Informasi Keluarga Pewaris -->
