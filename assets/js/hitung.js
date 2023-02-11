@@ -1952,18 +1952,102 @@ const currency = new Intl.NumberFormat('id-ID', {
     minimumFractionDigits: 0,
 })
 
-document.getElementById("locPasangan").value = currency.format(localStorage.getItem("valPasangan"));
-document.getElementById("locAnakLelaki").value = currency.format(localStorage.getItem("valAnakLelaki"));
-document.getElementById("locAnakPerempuan").value = currency.format(localStorage.getItem("valAnakPerempuan"));
-document.getElementById("locBapak").value = currency.format(localStorage.getItem("valBapak"));
-document.getElementById("locIbu").value = currency.format(localStorage.getItem("valIbu"));
-document.getElementById("locKakek").value =  currency.format(localStorage.getItem("valKakek"));
-document.getElementById("locNenek").value =  currency.format(localStorage.getItem("valNenek"));
-document.getElementById("locNenekI").value =  currency.format(localStorage.getItem("valNenekI"));
-document.getElementById("locCucuLelaki").value =  currency.format(localStorage.getItem("valCucuLelaki"));
-document.getElementById("locCucuPerempuan").value =  currency.format(localStorage.getItem("valCucuPerempuan"));
-document.getElementById("locSaudaraLelaki").value =  currency.format(localStorage.getItem("valSaudaraLelaki"));
-document.getElementById("locSaudaraPerempuan").value =  currency.format(localStorage.getItem("valSaudaraPerempuan"));
+if(localStorage.getItem("valPasangan") == "undefined") {
+    document.getElementById("locPasangan").value = "Rp.0";
+}
+else {
+    document.getElementById("locPasangan").value = currency.format(localStorage.getItem("valPasangan"));
+}
+
+if(localStorage.getItem("valAnakLelaki") == "undefined") {
+    document.getElementById("locAnakLelaki").value = "Rp.0";
+}
+else {
+    document.getElementById("locAnakLelaki").value = currency.format(localStorage.getItem("valAnakLelaki"));
+}
+
+if(localStorage.getItem("valAnakPerempuan") == "undefined") {
+    document.getElementById("locAnakPerempuan").value = "Rp.0";
+}
+else {
+    document.getElementById("locAnakPerempuan").value = currency.format(localStorage.getItem("valAnakPerempuan"));
+}
+
+if(localStorage.getItem("valBapak") == "undefined") {
+    document.getElementById("locBapak").value = "Rp.0";
+}
+else {
+    document.getElementById("locBapak").value = currency.format(localStorage.getItem("valBapak"));
+}
+
+if(localStorage.getItem("valIbu") == "undefined") {
+    document.getElementById("locIbu").value = "Rp.0";
+}
+else {
+    document.getElementById("locIbu").value = currency.format(localStorage.getItem("valIbu"));
+}
+
+if(localStorage.getItem("valKakek") == "undefined") {
+    document.getElementById("locKakek").value = "Rp.0";
+}
+else {
+    document.getElementById("locKakek").value = currency.format(localStorage.getItem("valKakek"));
+}
+
+if(localStorage.getItem("valNenek") == "undefined") {
+    document.getElementById("locNenek").value = "Rp.0";
+}
+else {
+    document.getElementById("locNenek").value = currency.format(localStorage.getItem("valNenek"));
+}
+
+if(localStorage.getItem("valNenekI") == "undefined") {
+    document.getElementById("locNenekI").value = "Rp.0";
+}
+else {
+    document.getElementById("locNenekI").value = currency.format(localStorage.getItem("valNenekI"));
+}
+
+if(localStorage.getItem("valCucuLelaki") == "undefined") {
+    document.getElementById("locCucuLelaki").value = "Rp.0";
+}
+else {
+    document.getElementById("locCucuLelaki").value = currency.format(localStorage.getItem("valCucuLelaki"));
+}
+
+if(localStorage.getItem("valCucuPerempuan") == "undefined") {
+    document.getElementById("locCucuPerempuan").value = "Rp.0";
+}
+else {
+    document.getElementById("locCucuPerempuan").value = currency.format(localStorage.getItem("valCucuPerempuan"));
+}
+
+if(localStorage.getItem("valSaudaraLelaki") == "undefined") {
+    document.getElementById("locSaudaraLelaki").value = "Rp.0";
+}
+else {
+    document.getElementById("locSaudaraLelaki").value = currency.format(localStorage.getItem("valSaudaraLelaki"));
+}
+
+if(localStorage.getItem("valSaudaraPerempuan") == "undefined") {
+    document.getElementById("locSaudaraPerempuan").value = "Rp.0";
+}
+else {
+    document.getElementById("locSaudaraPerempuan").value = currency.format(localStorage.getItem("valSaudaraPerempuan"));
+}
+
+// document.getElementById("locPasangan").value = currency.format(localStorage.getItem("valPasangan"));
+// document.getElementById("locAnakLelaki").value = currency.format(localStorage.getItem("valAnakLelaki"));
+// document.getElementById("locAnakPerempuan").value = currency.format(localStorage.getItem("valAnakPerempuan"));
+// document.getElementById("locBapak").value = currency.format(localStorage.getItem("valBapak"));
+// document.getElementById("locIbu").value = currency.format(localStorage.getItem("valIbu"));
+// document.getElementById("locKakek").value =  currency.format(localStorage.getItem("valKakek"));
+// document.getElementById("locNenek").value =  currency.format(localStorage.getItem("valNenek"));
+// document.getElementById("locNenekI").value =  currency.format(localStorage.getItem("valNenekI"));
+// document.getElementById("locCucuLelaki").value =  currency.format(localStorage.getItem("valCucuLelaki"));
+// document.getElementById("locCucuPerempuan").value =  currency.format(localStorage.getItem("valCucuPerempuan"));
+// document.getElementById("locSaudaraLelaki").value =  currency.format(localStorage.getItem("valSaudaraLelaki"));
+// document.getElementById("locSaudaraPerempuan").value =  currency.format(localStorage.getItem("valSaudaraPerempuan"));
 
 // var locPasangan = document.getElementById("locPasangan").value;
 // var locAnakLelaki = document.getElementById("locAnakLelaki").value;
