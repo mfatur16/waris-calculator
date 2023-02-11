@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/output.css">
     <link rel="stylesheet" href="assets/css/new.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/waris-in_icon.png">
     <title>Dalil | Waris-in</title>
 </head>
 
@@ -25,12 +26,10 @@
                 href="tentang.html">Tentang</a>
         </nav>
     </header>
-
-    <main>
-        <p class="font-bold text-lg mt-[100px] text-center">Dalil - dalil bagian harta waris</p>
-        <div id="dalil" class="m-20 font-[Arab] text-justify"></div>
+    <main class="bg-[#52BA5B] text-white pt-[100px] ">
+        <p class="font-bold text-3xl text-center">Dalil - dalil bagian harta waris</p>
+        <div id="dalil" class="text-lg leading-relaxed"></div>
     </main>
-
     <footer class="h-1/4 bg-[#223134f2] text-white py-6 px-8">
         <p>
             Made with &#10084; &copy;2023 <b><a href="index.html">Waris-in</a></b>
@@ -39,31 +38,7 @@
             Tugas Manajemen Proyek Teknologi Informasi | Semester 5 Teknik Informatika | IBM Bekasi
         </p>
     </footer>
-    <script>
-        var baseurl = "https://raw.githubusercontent.com/ianoit/Al-Quran-JSON-Indonesia-Kemenag/master/Surat/4.json";
-        var dalil = document.getElementById("dalil");
-
-        fetch(baseurl)
-            .then((result) => result.json())
-            .then(({ data}) => {
-                // console.log(data)
-                document.getElementById("dalil").innerHTML =
-                '<p class="mb-6 text-[2em]">' + data[6].aya_text + '</p><p class="mb-10">'
-                + data[6].translation_aya_text + '</p><p class="mb-6 text-[2em]">'
-                + data[10].aya_text + '</p><p class="mb-10">'
-                + data[10].translation_aya_text + '</p><p class="mb-6 text-[2em]">'
-                + data[11].aya_text + '</p><p class="mb-10">'
-                + data[11].translation_aya_text + '</p><p class="mb-6 text-[2em]">'
-                + data[12].aya_text + '</p><p class="mb-10">'
-                + data[12].translation_aya_text + '</p><p class="mb-6 text-[2em]">'
-                + data[13].aya_text + '</p><p class="mb-10">'
-                + data[13].translation_aya_text + '</p><p class="mb-6 text-[2em]">'
-                + data[31].aya_text + '</p><p class="mb-10">'
-                + data[31].translation_aya_text + '</p><p class="mb-6 text-[2em]">'
-                + data[175].aya_text + '</p><p class="mb-10">'
-                + data[175].translation_aya_text + '</p><p class="mb-6 text-[2em]">'
-            })
-    </script>
+    <script src="assets/js/dalil.js"></script>
 </body>
 
 </html>
