@@ -29,6 +29,7 @@
     <main id="main" class="flex flex-col pt-[100px] pb-[40px] items-center justify-center bg-[#52ba5bcf]">
         <form class="rounded-[20px] p-10 bg-[#ffffff9c] drop-shadow-xl w-[850px]" method="GET" action="hasil.html"
             autocomplete="off" enctype="multipart/form-data">
+
             <!-- Informasi Umum Pewaris -->
             <div class="text-[28px] font-bold border-b-[3px] border-black">
                 <h3>Informasi Umum Pewaris</h3>
@@ -67,6 +68,7 @@
                         menikah</label>
                 </div>
             </div>
+
             <!-- Informasi Harta Pewaris -->
             <div class="text-[28px] font-bold mt-[28px] border-b-[3px] border-black">
                 <h3>Informasi Harta Pewaris</h3>
@@ -76,22 +78,23 @@
                 <label class="text-[#00000080]">Harta yang dimiliki oleh pewaris</label>
                 <input type="text"
                     class="mt-2 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none format"
-                    name="harta" id="harta" placeholder="Rp.0" maxlength="17" required>
+                    name="harta" id="harta" placeholder="Rp 0" maxlength="17" required>
             </div>
             <div class="pt-2">
                 <label class="form-label text-lg font-bold">Perkiraan total hutang yang dimiliki pewaris</label><br>
                 <label class="text-[#00000080]">Hutang yang dimiliki oleh pewaris</label>
                 <input type="text"
                     class="mt-2 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none format"
-                    name="hutang" id="hutang" placeholder="Rp.0" maxlength="17">
+                    name="hutang" id="hutang" placeholder="Rp 0" maxlength="17">
             </div>
             <div class="pt-2">
                 <label class="form-label text-lg font-bold">Total harta yang akan diwariskan</label><br>
                 <label class="text-[#00000080]">Harta yang dibagikan oleh pihak yang meninggal</label>
                 <input type="text"
                     class="mt-2 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500 ring-1 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none format"
-                    name="totHarta" id="totHarta" placeholder="Rp.0" readonly>
+                    name="totHarta" id="totHarta" placeholder="Rp 0" readonly>
             </div>
+
             <!-- Informasi Keluarga Inti Pewaris -->
             <div id="kelInti" hidden>
                 <div class="text-[28px] font-bold mt-[28px] border-b-[3px] border-black">
@@ -155,6 +158,7 @@
                     </div>
                 </div>
                 <!-- Harusnya nyampe sini -->
+
                 <div class="form-control pt-2" id="jumlahCucu" hidden>
                     <label class="form-label text-lg font-bold">Jumlah cucu pewaris yang masih hidup saat pewaris baru
                         saja meninggal</label><br>
@@ -177,6 +181,7 @@
                     </div>
                 </div>
             </div>
+            
             <!-- Informasi Keluarga Pewaris -->
             <div class="text-[28px] font-bold mt-[28px] border-b-[3px] border-black">
                 <h3>Informasi Keluarga Pewaris</h3>
@@ -256,8 +261,6 @@
     <script src="assets/js/jquery.priceformat.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/hitung.js"></script>
-    <script>
-    </script>
 </body>
 
 </html>
