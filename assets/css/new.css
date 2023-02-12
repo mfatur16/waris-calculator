@@ -1,26 +1,23 @@
 @font-face {
     font-family: "Arab";
     src: url('https://github.com/ianoit/Al-Quran-JSON-Indonesia-Kemenag/blob/master/fonts/LPMQ.ttf');
-    }
+}
 
-.efek::after {
+.filter-shadow::after {
     content: '';
     display: block;
     position: absolute;
-    right: 0;
     bottom: 0;
-}
-
-.big_bg::after {
+    right: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to bottom, #217e3ec8, rgba(0,0,0,0));
 }
 
 .kartu::after {
-    background-image: linear-gradient(to top, #223134f2, rgba(0,0,0,0));
-    width: 100%;
-    height: 100%;
+    background-image: linear-gradient(to top, #223134f2, rgba(0, 0, 0, 0));
     border-radius: 20px;
-    z-index: -50;
+}
+
+.big-bg::after {
+    background-image: linear-gradient(to top, #217e3ec8, rgba(0, 0, 0, 0));
 }
