@@ -79,6 +79,7 @@ function ortu() {
     else {
         document.getElementById('nenekIbu').hidden = true; 
         document.getElementById('nenekYa').removeAttribute('required');
+        document.getElementById('nenekTidak').removeAttribute('required');
     }
 }
 

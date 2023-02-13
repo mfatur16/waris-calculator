@@ -7269,7 +7269,7 @@ if (localStorage.getItem("valCucuLelaki") == "undefined") {
     document.getElementById("locCucuLelaki").value = "Rp 0";
 }
 else {
-    document.getElementById("labCucuLelaki").innerHTML = 'Cucu Laki-laki (' + localStorage.getItem("inCucuLelaki") + ')';
+    document.getElementById("labCucuLelaki").innerHTML = 'Cucu Laki-laki dari Anak Laki-Laki (' + localStorage.getItem("inCucuLelaki") + ')';
     document.getElementById("locCucuLelaki").value = currency.format(localStorage.getItem("valCucuLelaki")) + ' (' + currency.format(localStorage.getItem("valCucuLelaki") / localStorage.getItem("inCucuLelaki")) + ')';
 }
 
@@ -7277,7 +7277,7 @@ if (localStorage.getItem("valCucuPerempuan") == "undefined") {
     document.getElementById("locCucuPerempuan").value = "Rp 0";
 }
 else {
-    document.getElementById("labCucuPerempuan").innerHTML = 'Cucu Perempuan (' + localStorage.getItem("inCucuPerempuan") + ')';
+    document.getElementById("labCucuPerempuan").innerHTML = 'Cucu Perempuan dari Anak Laki-Laki (' + localStorage.getItem("inCucuPerempuan") + ')';
     document.getElementById("locCucuPerempuan").value = currency.format(localStorage.getItem("valCucuPerempuan")) + ' (' + currency.format(localStorage.getItem("valCucuPerempuan") / localStorage.getItem("inCucuPerempuan")) + ')';
 }
 
