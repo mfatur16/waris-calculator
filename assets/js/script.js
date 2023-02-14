@@ -73,13 +73,13 @@ document.getElementById('ortu').addEventListener('mouseup', ortu);
 
 function ortu() {
     if(document.getElementById('ortu').value == ortuArray[0] || document.getElementById('ortu').value == ortuArray[2]) {
-        document.getElementById('nenekIbu').hidden = false; 
+        document.getElementById('nenekIbu').hidden = false;
+        document.getElementById('nenekYa').setAttribute('required', true);
         // console.log(ortuArray[2]);
     }
     else {
         document.getElementById('nenekIbu').hidden = true; 
         document.getElementById('nenekYa').removeAttribute('required');
-        document.getElementById('nenekTidak').removeAttribute('required');
     }
 }
 

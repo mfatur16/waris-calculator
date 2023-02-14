@@ -1617,35 +1617,35 @@ function hitung() {
                             // Deklarasi kakek dan nenek dari sisi bapak
                             var mbah = document.getElementById('mbah').value;
 
-                            // Kakek hidup - Sisi bapak (COMPLETED)
+                            // Kakek hidup - Sisi bapak (COMPLETED) // blom fix
                             if (mbah == mbahArray[0]) {
                                 var bagPasangan = totHarta * (9 / 72);
                                 var bagAnakLelaki = totHarta * (26 / 72);
                                 var bagAnakPerempuan = totHarta * (13 / 72);
-                                var bagNenekI = totHarta * (12 / 72);
+                                // var bagNenekI = totHarta * (12 / 72);
                                 var bagKakek = totHarta * (12 / 72);
                             }
-                            // Nenek hidup - Sisi bapak (COMPLETED)
+                            // Nenek hidup - Sisi bapak (COMPLETED) fix
                             else if (mbah == mbahArray[1]) {
                                 var bagPasangan = totHarta * (9 / 72);
                                 var bagAnakLelaki = totHarta * (34 / 72);
                                 var bagAnakPerempuan = totHarta * (17 / 72);
-                                var bagNenekI = totHarta * (6 / 72);
-                                var bagNenek = totHarta * (6 / 72);
+                                // var bagNenekI = totHarta * (6 / 72);
+                                var bagNenek = totHarta * (12 / 72);
                             }
-                            // Kakek & nenek wafat - Sisi bapak (COMPLETED)
+                            // Kakek & nenek wafat - Sisi bapak (COMPLETED) fix
                             else if (mbah == mbahArray[2]) {
-                                var bagPasangan = totHarta * (9 / 72);
-                                var bagAnakLelaki = totHarta * (34 / 72);
-                                var bagAnakPerempuan = totHarta * (17 / 72);
-                                var bagNenekI = totHarta * (12 / 72);
+                                var bagPasangan = totHarta * (3 / 24);
+                                var bagAnakLelaki = totHarta * (14 / 24);
+                                var bagAnakPerempuan = totHarta * (7 / 24);
+                                // var bagNenekI = totHarta * (12 / 72);
                             }
-                            // Kakek & nenek hidup - Sisi bapak (COMPLETED)
+                            // Kakek & nenek hidup - Sisi bapak (COMPLETED) // blom fix
                             else {
                                 var bagPasangan = totHarta * (9 / 72);
                                 var bagAnakLelaki = totHarta * (26 / 72);
                                 var bagAnakPerempuan = totHarta * (13 / 72);
-                                var bagNenekI = totHarta * (6 / 72);
+                                // var bagNenekI = totHarta * (6 / 72);
                                 var bagKakek = totHarta * (12 / 72);
                                 var bagNenek = totHarta * (6 / 72);
                             }
@@ -3447,36 +3447,36 @@ function hitung() {
                             var saudaraLelaki = document.getElementById('saudaraLelaki').value;
                             var saudaraPerempuan = document.getElementById('saudaraPerempuan').value;
 
-                            // Saudara lelaki saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                            // Saudara lelaki saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                             if (saudaraLelaki > 0 && saudaraPerempuan <= 0) {
-                                var bagPasangan = totHarta * (6 / 24);
-                                var bagNenekI = totHarta * (4 / 24);
-                                var bagKakek = totHarta * (7 / 24);
-                                var bagSaudaraLelaki = totHarta * (7 / 24);
+                                var bagPasangan = totHarta * (2 / 8);
+                                // var bagNenekI = totHarta * (4 / 24);
+                                var bagKakek = totHarta * (3 / 8);
+                                var bagSaudaraLelaki = totHarta * (3 / 8);
                             }
 
-                            // Saudara perempuan saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                            // Saudara perempuan saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                             else if (saudaraPerempuan > 0 && saudaraLelaki <= 0) {
-                                var bagPasangan = totHarta * (3 / 13);
-                                var bagNenekI = totHarta * (2 / 13);
-                                var bagKakek = totHarta * (2 / 13);
-                                var bagSaudaraPerempuan = totHarta * (6 / 13);
+                                var bagPasangan = totHarta * (1 / 4);
+                                // var bagNenekI = totHarta * (2 / 13);
+                                var bagKakek = totHarta * (1 / 4);
+                                var bagSaudaraPerempuan = totHarta * (2 / 4);
                             }
 
-                            // Saudara lelaki & perempuan (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                            // Saudara lelaki & perempuan (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                             else if (saudaraPerempuan > 0 && saudaraLelaki > 0) {
-                                var bagPasangan = totHarta * (15 / 60);
-                                var bagNenekI = totHarta * (10 / 60);
-                                var bagKakek = totHarta * (14 / 60);
-                                var bagSaudaraLelaki = totHarta * (14 / 60);
-                                var bagSaudaraPerempuan = totHarta * (7 / 60);
+                                var bagPasangan = totHarta * (5 / 20);
+                                // var bagNenekI = totHarta * (10 / 60);
+                                var bagKakek = totHarta * (6 / 20);
+                                var bagSaudaraLelaki = totHarta * (6 / 20);
+                                var bagSaudaraPerempuan = totHarta * (3 / 20);
                             }
 
-                            // Ga punya saudara (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                            // Ga punya saudara (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                             else {
-                                var bagPasangan = totHarta * (3 / 12);
-                                var bagNenekI = totHarta * (2 / 12);
-                                var bagKakek = totHarta * (7 / 12);
+                                var bagPasangan = totHarta * (1 / 4);
+                                // var bagNenekI = totHarta * (2 / 12);
+                                var bagKakek = totHarta * (3 / 4);
                             }
                         }
 
@@ -3486,36 +3486,36 @@ function hitung() {
                             var saudaraLelaki = document.getElementById('saudaraLelaki').value;
                             var saudaraPerempuan = document.getElementById('saudaraPerempuan').value;
 
-                            // Saudara lelaki saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                            // Saudara lelaki saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                             if (saudaraLelaki > 0 && saudaraPerempuan <= 0) {
                                 var bagPasangan = totHarta * (3 / 12);
-                                var bagNenekI = totHarta * (1 / 12);
-                                var bagNenek = totHarta * (1 / 12);
+                                // var bagNenekI = totHarta * (1 / 12);
+                                var bagNenek = totHarta * (2 / 12);
                                 var bagSaudaraLelaki = totHarta * (7 / 12);
                             }
 
-                            // Saudara perempuan saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                            // Saudara perempuan saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                             else if (saudaraPerempuan > 0 && saudaraLelaki <= 0) {
-                                var bagPasangan = totHarta * (8 / 32);
-                                var bagNenekI = totHarta * (3 / 32);
-                                var bagNenek = totHarta * (3 / 32);
-                                var bagSaudaraPerempuan = totHarta * (18 / 32);
+                                var bagPasangan = totHarta * (4 / 16);
+                                // var bagNenekI = totHarta * (3 / 32);
+                                var bagNenek = totHarta * (3 / 16);
+                                var bagSaudaraPerempuan = totHarta * (9 / 16);
                             }
 
-                            // Saudara lelaki & perempuan (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                            // Saudara lelaki & perempuan (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                             else if (saudaraPerempuan > 0 && saudaraLelaki > 0) {
                                 var bagPasangan = totHarta * (9 / 36);
-                                var bagNenekI = totHarta * (3 / 36);
-                                var bagNenek = totHarta * (3 / 36);
+                                // var bagNenekI = totHarta * (3 / 36);
+                                var bagNenek = totHarta * (6 / 36);
                                 var bagSaudaraLelaki = totHarta * (14 / 36);
                                 var bagSaudaraPerempuan = totHarta * (7 / 36);
                             }
 
                             // Ga punya saudara (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
                             else {
-                                var bagPasangan = totHarta * (2 / 8);
-                                var bagNenekI = totHarta * (3 / 8);
-                                var bagNenek = totHarta * (3 / 8);
+                                var bagPasangan = totHarta * (1 / 4);
+                                // var bagNenekI = totHarta * (3 / 8);
+                                var bagNenek = totHarta * (3 / 4);
                             }
                         }
 
@@ -3525,32 +3525,32 @@ function hitung() {
                             var saudaraLelaki = document.getElementById('saudaraLelaki').value;
                             var saudaraPerempuan = document.getElementById('saudaraPerempuan').value;
 
-                            // Saudara lelaki saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                            // Saudara lelaki saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                             if (saudaraLelaki > 0 && saudaraPerempuan <= 0) {
-                                var bagPasangan = totHarta * (3 / 12);
-                                var bagNenekI = totHarta * (2 / 12);
-                                var bagSaudaraLelaki = totHarta * (7 / 12);
-                            }
-
-                            // Saudara perempuan saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
-                            else if (saudaraPerempuan > 0 && saudaraLelaki <= 0) {
-                                var bagPasangan = totHarta * (4 / 16);
-                                var bagNenekI = totHarta * (3 / 16);
-                                var bagSaudaraPerempuan = totHarta * (9 / 16);
-                            }
-
-                            // Saudara lelaki & perempuan (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
-                            else if (saudaraPerempuan > 0 && saudaraLelaki > 0) {
-                                var bagPasangan = totHarta * (9 / 36);
-                                var bagNenekI = totHarta * (6 / 36);
-                                var bagSaudaraLelaki = totHarta * (14 / 36);
-                                var bagSaudaraPerempuan = totHarta * (7 / 36);
-                            }
-
-                            // Ga punya saudara (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
-                            else {
                                 var bagPasangan = totHarta * (1 / 4);
-                                var bagNenekI = totHarta * (3 / 4);
+                                // var bagNenekI = totHarta * (2 / 12);
+                                var bagSaudaraLelaki = totHarta * (3 / 4);
+                            }
+
+                            // Saudara perempuan saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
+                            else if (saudaraPerempuan > 0 && saudaraLelaki <= 0) {
+                                var bagPasangan = totHarta * (1 / 4);
+                                // var bagNenekI = totHarta * (3 / 16);
+                                var bagSaudaraPerempuan = totHarta * (3 / 4);
+                            }
+
+                            // Saudara lelaki & perempuan (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
+                            else if (saudaraPerempuan > 0 && saudaraLelaki > 0) {
+                                var bagPasangan = totHarta * (1 / 4);
+                                // var bagNenekI = totHarta * (6 / 36);
+                                var bagSaudaraLelaki = totHarta * (2 / 4);
+                                var bagSaudaraPerempuan = totHarta * (1 / 4);
+                            }
+
+                            // Ga punya saudara (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
+                            else {
+                                var bagPasangan = totHarta;
+                                // var bagNenekI = totHarta * (3 / 4);
                             }
                         }
 
@@ -3560,40 +3560,40 @@ function hitung() {
                             var saudaraLelaki = document.getElementById('saudaraLelaki').value;
                             var saudaraPerempuan = document.getElementById('saudaraPerempuan').value;
 
-                            // Saudara lelaki saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                            // Saudara lelaki saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                             if (saudaraLelaki > 0 && saudaraPerempuan <= 0) {
                                 var bagPasangan = totHarta * (6 / 24);
-                                var bagNenekI = totHarta * (2 / 24);
+                                // var bagNenekI = totHarta * (2 / 24);
                                 var bagKakek = totHarta * (7 / 24);
-                                var bagNenek = totHarta * (2 / 24);
+                                var bagNenek = totHarta * (4 / 24);
                                 var bagSaudaraLelaki = totHarta * (7 / 24);
                             }
 
-                            // Saudara perempuan saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                            // Saudara perempuan saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                             else if (saudaraPerempuan > 0 && saudaraLelaki <= 0) {
                                 var bagPasangan = totHarta * (3 / 13);
-                                var bagNenekI = totHarta * (1 / 13);
+                                // var bagNenekI = totHarta * (1 / 13);
                                 var bagKakek = totHarta * (2 / 13);
-                                var bagNenek = totHarta * (1 / 13);
+                                var bagNenek = totHarta * (2 / 13);
                                 var bagSaudaraPerempuan = totHarta * (6 / 13);
                             }
 
-                            // Saudara lelaki & perempuan (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                            // Saudara lelaki & perempuan (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                             else if (saudaraPerempuan > 0 && saudaraLelaki > 0) {
                                 var bagPasangan = totHarta * (15 / 60);
-                                var bagNenekI = totHarta * (5 / 60);
+                                // var bagNenekI = totHarta * (5 / 60);
                                 var bagKakek = totHarta * (14 / 60);
-                                var bagNenek = totHarta * (5 / 60);
-                                var bagSaudaraLelaki = totHarta * (14 / 24);
-                                var bagSaudaraPerempuan = totHarta * (7 / 24);
+                                var bagNenek = totHarta * (10 / 60);
+                                var bagSaudaraLelaki = totHarta * (14 / 60);
+                                var bagSaudaraPerempuan = totHarta * (7 / 60);
                             }
 
-                            // Ga punya saudara (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                            // Ga punya saudara (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                             else {
                                 var bagPasangan = totHarta * (3 / 12);
-                                var bagNenekI = totHarta * (1 / 12);
+                                // var bagNenekI = totHarta * (1 / 12);
                                 var bagKakek = totHarta * (7 / 12);
-                                var bagNenek = totHarta * (1 / 12);
+                                var bagNenek = totHarta * (2 / 12);
                             }
                         }
                     }
@@ -3935,32 +3935,31 @@ function hitung() {
                         var saudaraLelaki = document.getElementById('saudaraLelaki').value;
                         var saudaraPerempuan = document.getElementById('saudaraPerempuan').value;
 
-                        // Saudara lelaki saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                        // Saudara lelaki saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                         if (saudaraLelaki > 0 && saudaraPerempuan <= 0) {
-                            var bagNenekI = totHarta * (2 / 12);
-                            var bagKakek = totHarta * (5 / 12);
-                            var bagSaudaraLelaki = totHarta * (5 / 12);
+                            // var bagNenekI = totHarta * (2 / 12);
+                            var bagKakek = totHarta * (1 / 2);
+                            var bagSaudaraLelaki = totHarta * (1 / 2);
                         }
 
-                        // Saudara perempuan saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                        // Saudara perempuan saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                         else if (saudaraPerempuan > 0 && saudaraLelaki <= 0) {
-                            var bagNenekI = totHarta * (1 / 6);
-                            var bagKakek = totHarta * (2 / 6);
-                            var bagSaudaraPerempuan = totHarta * (3 / 6);
+                            // var bagNenekI = totHarta * (1 / 6);
+                            var bagKakek = totHarta * (1 / 2);
+                            var bagSaudaraPerempuan = totHarta * (1 / 2);
                         }
 
-                        // Saudara lelaki & perempuan (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                        // Saudara lelaki & perempuan (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                         else if (saudaraPerempuan > 0 && saudaraLelaki > 0) {
-                            var bagNenekI = totHarta * (1 / 6);
-                            var bagKakek = totHarta * (2 / 6);
-                            var bagSaudaraLelaki = totHarta * (2 / 6);
-                            var bagSaudaraPerempuan = totHarta * (1 / 6);
+                            // var bagNenekI = totHarta * (1 / 6);
+                            var bagKakek = totHarta * (2 / 5);
+                            var bagSaudaraLelaki = totHarta * (2 / 5);
+                            var bagSaudaraPerempuan = totHarta * (1 / 5);
                         }
 
-                        // Ga punya saudara (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                        // Ga punya saudara (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                         else {
-                            var bagNenekI = totHarta * (1 / 6);
-                            var bagKakek = totHarta * (5 / 6);
+                            var bagKakek = totHarta;
                         }
                     }
 
@@ -3970,32 +3969,32 @@ function hitung() {
                         var saudaraLelaki = document.getElementById('saudaraLelaki').value;
                         var saudaraPerempuan = document.getElementById('saudaraPerempuan').value;
 
-                        // Saudara lelaki saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                        // Saudara lelaki saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                         if (saudaraLelaki > 0 && saudaraPerempuan <= 0) {
-                            var bagNenekI = totHarta * (1 / 12);
-                            var bagNenek = totHarta * (1 / 12);
-                            var bagSaudaraLelaki = totHarta * (10 / 12);
+                            // var bagNenekI = totHarta * (1 / 12);
+                            var bagNenek = totHarta * (1 / 6);
+                            var bagSaudaraLelaki = totHarta * (5 / 6);
                         }
 
-                        // Saudara perempuan saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                        // Saudara perempuan saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                         else if (saudaraPerempuan > 0 && saudaraLelaki <= 0) {
-                            var bagNenekI = totHarta * (1 / 8);
-                            var bagNenek = totHarta * (1 / 8);
-                            var bagSaudaraPerempuan = totHarta * (6 / 8);
+                            // var bagNenekI = totHarta * (1 / 8);
+                            var bagNenek = totHarta * (1 / 4);
+                            var bagSaudaraPerempuan = totHarta * (3 / 4);
                         }
 
-                        // Saudara lelaki & perempuan (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                        // Saudara lelaki & perempuan (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                         else if (saudaraPerempuan > 0 && saudaraLelaki > 0) {
-                            var bagNenekI = totHarta * (3 / 36);
-                            var bagNenek = totHarta * (3 / 36);
-                            var bagSaudaraLelaki = totHarta * (20 / 36);
-                            var bagSaudaraPerempuan = totHarta * (10 / 36);
+                            // var bagNenekI = totHarta * (3 / 36);
+                            var bagNenek = totHarta * (3 / 18);
+                            var bagSaudaraLelaki = totHarta * (10 / 18);
+                            var bagSaudaraPerempuan = totHarta * (5 / 18);
                         }
 
-                        // Ga punya saudara (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                        // Ga punya saudara (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                         else {
-                            var bagNenekI = totHarta * (1 / 2);
-                            var bagNenek = totHarta * (1 / 2);
+                            // var bagNenekI = totHarta * (1 / 2);
+                            var bagNenek = totHarta;
                         }
                     }
 
@@ -4005,29 +4004,29 @@ function hitung() {
                         var saudaraLelaki = document.getElementById('saudaraLelaki').value;
                         var saudaraPerempuan = document.getElementById('saudaraPerempuan').value;
 
-                        // Saudara lelaki saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                        // Saudara lelaki saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                         if (saudaraLelaki > 0 && saudaraPerempuan <= 0) {
-                            var bagNenekI = totHarta * (1 / 6);
-                            var bagSaudaraLelaki = totHarta * (5 / 6);
+                            // var bagNenekI = totHarta * (1 / 6);
+                            var bagSaudaraLelaki = totHarta;
                         }
 
-                        // Saudara perempuan saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                        // Saudara perempuan saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                         else if (saudaraPerempuan > 0 && saudaraLelaki <= 0) {
-                            var bagNenekI = totHarta * (1 / 4);
-                            var bagSaudaraPerempuan = totHarta * (3 / 4);
+                            // var bagNenekI = totHarta * (1 / 4);
+                            var bagSaudaraPerempuan = totHarta;
                         }
 
-                        // Saudara lelaki & perempuan (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                        // Saudara lelaki & perempuan (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                         else if (saudaraPerempuan > 0 && saudaraLelaki > 0) {
-                            var bagNenekI = totHarta * (3 / 18);
-                            var bagSaudaraLelaki = totHarta * (10 / 18);
-                            var bagSaudaraPerempuan = totHarta * (5 / 18);
+                            // var bagNenekI = totHarta * (3 / 18);
+                            var bagSaudaraLelaki = totHarta * (2 / 3);
+                            var bagSaudaraPerempuan = totHarta * (1 / 3);
                         }
 
-                        // Ga punya saudara (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
-                        else {
-                            var bagNenekI = totHarta * (1 / 1);
-                        }
+                        // Ga punya saudara (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
+                        // else {
+                        //     var bagNenekI = totHarta * (1 / 1);
+                        // }
                     }
 
                     // Kakek & nenek hidup - Sisi bapak (COMPLETED)
@@ -4036,36 +4035,36 @@ function hitung() {
                         var saudaraLelaki = document.getElementById('saudaraLelaki').value;
                         var saudaraPerempuan = document.getElementById('saudaraPerempuan').value;
 
-                        // Saudara lelaki saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                        // Saudara lelaki saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                         if (saudaraLelaki > 0 && saudaraPerempuan <= 0) {
-                            var bagNenekI = totHarta * (1 / 12);
+                            // var bagNenekI = totHarta * (1 / 12);
                             var bagKakek = totHarta * (5 / 12);
-                            var bagNenek = totHarta * (1 / 12);
+                            var bagNenek = totHarta * (2 / 12);
                             var bagSaudaraLelaki = totHarta * (5 / 12);
                         }
 
-                        // Saudara perempuan saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                        // Saudara perempuan saja (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                         else if (saudaraPerempuan > 0 && saudaraLelaki <= 0) {
-                            var bagNenekI = totHarta * (1 / 12);
-                            var bagKakek = totHarta * (4 / 12);
-                            var bagNenek = totHarta * (1 / 12);
-                            var bagSaudaraPerempuan = totHarta * (6 / 12);
+                            // var bagNenekI = totHarta * (1 / 12);
+                            var bagKakek = totHarta * (2 / 6);
+                            var bagNenek = totHarta * (1 / 6);
+                            var bagSaudaraPerempuan = totHarta * (3 / 6);
                         }
 
-                        // Saudara lelaki & perempuan (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                        // Saudara lelaki & perempuan (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                         else if (saudaraPerempuan > 0 && saudaraLelaki > 0) {
-                            var bagNenekI = totHarta * (1 / 12);
-                            var bagKakek = totHarta * (4 / 12);
-                            var bagNenek = totHarta * (1 / 12);
-                            var bagSaudaraLelaki = totHarta * (4 / 12);
-                            var bagSaudaraPerempuan = totHarta * (2 / 12);
+                            // var bagNenekI = totHarta * (1 / 12);
+                            var bagKakek = totHarta * (2 / 6);
+                            var bagNenek = totHarta * (1 / 6);
+                            var bagSaudaraLelaki = totHarta * (2 / 6);
+                            var bagSaudaraPerempuan = totHarta * (1 / 6);
                         }
 
-                        // Ga punya saudara (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED)
+                        // Ga punya saudara (TINGGAL PEMBAGIAN PER PERNYA) (COMPLETED) fix
                         else {
-                            var bagNenekI = totHarta * (1 / 12);
-                            var bagKakek = totHarta * (10 / 12);
-                            var bagNenek = totHarta * (1 / 12);
+                            // var bagNenekI = totHarta * (1 / 12);
+                            var bagKakek = totHarta * (5 / 6);
+                            var bagNenek = totHarta * (1 / 6);
                         }
                     }
                 }
