@@ -1,2 +1,2 @@
 # waris-calculator
-Kalkulator Waris
+Sebuah aplikasi web penghitung jumlah warisan yang dibangun sebagai Tugas Akhir Manajemen Proyek Teknologi Informasi
